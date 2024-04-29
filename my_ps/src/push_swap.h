@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:27:26 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/29 17:34:50 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:58:48 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void			radix_sort(t_stack **stack_a, t_stack **stack_b);
 // ## utils
 // ### utils_check.c
 int				ft_isnbr(char *num);
-//int				ft_isnotnbr(int num, char **argv, int i);
+int				ft_isnotnbr(int num, char **argv, int i);
 void			ft_argcheck(int argc, char **argv);
 
 // ### utils_free+print.c
@@ -88,11 +88,11 @@ t_stack			*get_next_min(t_stack **stack);
 void			index_stack(t_stack **stack);
 
 // ### utils_list.c
-t_stack			*ft_lstnew(int value);
-void			ft_lstadd_front(t_stack **stack, t_stack *new);
-t_stack			*ft_lstlast(t_stack *head);
-void			ft_lstadd_back(t_stack **stack, t_stack *new);
-int				ft_lstsize(t_stack *head);
+t_stack			*ft_listnew(int value);
+void			ft_listadd_front(t_stack **stack, t_stack *new);
+t_stack			*ft_listlast(t_stack *head);
+void			ft_listadd_back(t_stack **stack, t_stack *new);
+int				ft_listsize(t_stack *head);
 
 // ### utils_others.c
 int				get_distance(t_stack **stack, int index);

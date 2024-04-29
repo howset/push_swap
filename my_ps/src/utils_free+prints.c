@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:22:18 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/29 17:23:03 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:05:50 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ void	ft_free(char **str)
 	while (str[i])
 		i++;
 	while (i >= 0)
-		free(str[i--]);
+	{
+		free(str[i]);
+		i--;
+	}
 }
 
 void	free_stack(t_stack **stack)

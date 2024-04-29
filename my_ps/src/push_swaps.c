@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:44:54 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/29 17:24:30 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/29 19:00:01 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	stack_init(t_stack **stack, int argc, char **argv);
 int		is_sorted(t_stack **stack);
 void	sort_stack(t_stack **stack_a, t_stack **stack_b);
 
-int	main(int argc, char **argv)
+int	main(int argc, char *argv[])
 {
 	t_stack	**stack_a;
 	t_stack	**stack_b;
@@ -24,8 +24,8 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (-1);
 	ft_argcheck(argc, argv);
-	stack_a = (t_stack **)malloc(sizeof(t_stack));
-	stack_b = (t_stack **)malloc(sizeof(t_stack));
+	stack_a = malloc(sizeof(t_stack));
+	stack_b = malloc(sizeof(t_stack));
 	*stack_a = NULL;
 	*stack_b = NULL;
 	stack_init(stack_a, argc, argv);
@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-void	stack_init(t_stack **stack, int argc, char **argv)
+void	stack_init(t_stack **stack, int argc, char *argv[])
 {
 	t_stack	*new;
 	char	**args;
@@ -57,13 +57,13 @@ void	stack_init(t_stack **stack, int argc, char **argv)
 	}
 	while (args[i])
 	{
-		new = ft_lstnew(ft_atoi(args[i]));
-		ft_lstadd_back(stack, new);
+		new = ft_listnew(ft_atoi(args[i]));
+		ft_listadd_back(stack, new);
 		i++;
 	}
 	index_stack(stack);
-	if (argc == 2)
-		ft_free(args);
+	//if (argc == 2)
+	//	ft_free(args);
 }
 
 int	is_sorted(t_stack **stack)
@@ -82,7 +82,7 @@ int	is_sorted(t_stack **stack)
 
 void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
-	if (ft_lstsize(*stack_a) <= 5)
+	if (ft_listsize(*stack_a) <= 5)
 		simple_sort(stack_a, stack_b);
 	else
 		radix_sort(stack_a, stack_b);
