@@ -6,22 +6,22 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:54:23 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/25 19:27:33 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/26 17:25:58 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	get_min(t_stack **stack, int val);
-static void	sort_3(t_stack **stack_a);
-static void	sort_4(t_stack **stack_a, t_stack **stack_b);
-static void	sort_5(t_stack **stack_a, t_stack **stack_b);
+int		get_min(t_stack **stack, int val);
+void	sort_3(t_stack **stack_a);
+void	sort_4(t_stack **stack_a, t_stack **stack_b);
+void	sort_5(t_stack **stack_a, t_stack **stack_b);
 
 void	simple_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
 
-	if (is_sorted(stack_a) || ft_lstsize(*stack_a) == 0
+	if (is_sorted(stack_a) || ft_lstsize(*stack_a) == 0 
 		|| ft_lstsize(*stack_a) == 1)
 		return ;
 	size = ft_lstsize(*stack_a);
@@ -35,7 +35,7 @@ void	simple_sort(t_stack **stack_a, t_stack **stack_b)
 		sort_5(stack_a, stack_b);
 }
 
-static int	get_min(t_stack **stack, int val)
+int	get_min(t_stack **stack, int val)
 {
 	t_stack	*head;
 	int		min;
@@ -51,7 +51,7 @@ static int	get_min(t_stack **stack, int val)
 	return (min);
 }
 
-static void	sort_3(t_stack **stack_a)
+void	sort_3(t_stack **stack_a)
 {
 	t_stack	*head;
 	int		min;
@@ -87,7 +87,7 @@ static void	sort_3(t_stack **stack_a)
 	}
 }
 
-static void	sort_4(t_stack **stack_a, t_stack **stack_b)
+void	sort_4(t_stack **stack_a, t_stack **stack_b)
 {
 	int	distance;
 
@@ -110,7 +110,7 @@ static void	sort_4(t_stack **stack_a, t_stack **stack_b)
 	pa(stack_a, stack_b);
 }
 
-static void	sort_5(t_stack **stack_a, t_stack **stack_b)
+void	sort_5(t_stack **stack_a, t_stack **stack_b)
 {
 	int	distance;
 

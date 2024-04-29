@@ -6,13 +6,13 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:55:01 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/25 19:28:12 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/26 17:04:38 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	get_max_bits(t_stack **stack);
+int	get_max_bits(t_stack **stack);
 
 void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 {
@@ -43,7 +43,7 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-static int	get_max_bits(t_stack **stack)
+int	get_max_bits(t_stack **stack)
 {
 	t_stack	*head;
 	int		max;

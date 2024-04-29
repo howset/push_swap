@@ -12,7 +12,19 @@ AR					= ar rcs
 RM					= rm -f
 
 ## Sources & header
-SRC-PS				= ./src/push_swaps.c
+SRC-PS				= ./src/push_swaps.c \
+						./src/algo_radixsorts.c \
+						./src/algo_simplesorts.c \
+						./src/operations_pushs.c \
+						./src/operations_rotaterevs.c \
+						./src/operations_rotates.c \
+						./src/operations_swaps.c \
+						./src/utils_checkss.c \
+						./src/utils_free+prints.c \
+						./src/utils_indexs.c \
+						./src/utils_listss.c \
+						./src/utils_others.c
+
 HEADER				= ./src/
 
 ## Text colors

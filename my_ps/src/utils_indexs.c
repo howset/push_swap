@@ -6,13 +6,13 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:08:16 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/25 19:17:00 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/26 17:05:16 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_stack	*get_next_min(t_stack **stack)
+t_stack	*get_next_min(t_stack **stack)
 {
 	t_stack	*head;
 	t_stack	*min;

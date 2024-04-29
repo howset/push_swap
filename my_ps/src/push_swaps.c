@@ -6,14 +6,15 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:44:54 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/25 19:44:52 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/26 17:20:41 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	stack_init(t_stack **stack, int argc, char **argv);
-static void	sort_stack(t_stack **stack_a, t_stack **stack_b);
+void	stack_init(t_stack **stack, int argc, char **argv);
+int		is_sorted(t_stack **stack);
+void	sort_stack(t_stack **stack_a, t_stack **stack_b);
 
 int	main(int argc, char **argv)
 {
@@ -40,7 +41,7 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-static void	stack_init(t_stack **stack, int argc, char **argv)
+void	stack_init(t_stack **stack, int argc, char **argv)
 {
 	t_stack	*new;
 	char	**args;
@@ -65,7 +66,21 @@ static void	stack_init(t_stack **stack, int argc, char **argv)
 		ft_free(args);
 }
 
-static void	sort_stack(t_stack **stack_a, t_stack **stack_b)
+int	is_sorted(t_stack **stack)
+{
+	t_stack	*head;
+
+	head = *stack;
+	while (head && head->next)
+	{
+		if (head->value > head->next->value)
+			return (0);
+		head = head->next;
+	}
+	return (1);
+}
+
+void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	if (ft_lstsize(*stack_a) <= 5)
 		simple_sort(stack_a, stack_b);

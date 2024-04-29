@@ -6,34 +6,34 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:06:12 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/25 19:06:14 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/26 17:15:34 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_contains(int num, char **argv, int i)
+int	ft_isnotnbr(int nbr, char **argv, int i)
 {
 	i++;
 	while (argv[i])
 	{
-		if (ft_atoi(argv[i]) == num)
+		if (ft_atoi(argv[i]) == nbr)
 			return (1);
 		i++;
 	}
 	return (0);
 }
 
-static int	ft_isnum(char *num)
+int	ft_isnbr(char *nbr)
 {
 	int	i;
 
 	i = 0;
-	if (num[0] == '-')
+	if (nbr[0] == '-')
 		i++;
-	while (num[i])
+	while (nbr[i])
 	{
-		if (!ft_isdigit(num[i]))
+		if (!ft_isdigit(nbr[i]))
 			return (0);
 		i++;
 	}
@@ -57,12 +57,12 @@ void	ft_check_args(int argc, char **argv)
 	while (args[i])
 	{
 		tmp = ft_atoi(args[i]);
-		if (!ft_isnum(args[i]))
-			ft_error("Error");
-		if (ft_contains(tmp, args, i))
-			ft_error("Error");
+		if (!ft_isnbr(args[i]))
+			ft_putendl_fd("Error\n", 2);
+		if (ft_isnotnbr(tmp, args, i))
+			ft_putendl_fd("Error\n", 2);
 		if (tmp < -2147483648 || tmp > 2147483647)
-			ft_error("Error");
+			ft_putendl_fd("Error\n", 2);
 		i++;
 	}
 	if (argc == 2)

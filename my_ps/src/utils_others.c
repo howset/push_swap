@@ -6,25 +6,11 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:07:20 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/25 19:23:03 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/26 15:58:40 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	is_sorted(t_stack **stack)
-{
-	t_stack	*head;
-
-	head = *stack;
-	while (head && head->next)
-	{
-		if (head->value > head->next->value)
-			return (0);
-		head = head->next;
-	}
-	return (1);
-}
 
 int	get_distance(t_stack **stack, int index)
 {

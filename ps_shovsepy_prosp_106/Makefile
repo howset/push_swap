@@ -19,7 +19,7 @@ CHECK_SRCS = $(wildcard utils/*.c) src/instructions.c checker.c
 OBJS = ${SRCS:.c=.o}
 CHECK_OBJS = ${CHECK_SRCS:.c=.o}
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror -Iincludes
 
 RM = rm -rf
