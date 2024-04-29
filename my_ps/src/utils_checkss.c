@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:06:12 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/29 18:05:10 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/29 19:12:54 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ft_argcheck(int argc, char *argv[])
 		if (!ft_isnbr(args[i]))
 			ft_prt_err("Error\n", 2);
 		if (ft_isnotnbr(tmp, args, i))
-			ft_prt_err("Error\n", 2);
+			ft_prt_err("Error\n", 2); // check for doubles
 		if (tmp < -2147483648 || tmp > 2147483647)
 			ft_prt_err("Error\n", 2);
 		i++;
