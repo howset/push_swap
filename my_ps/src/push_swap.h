@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:27:26 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/26 17:22:55 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:34:50 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,15 +72,16 @@ void			radix_sort(t_stack **stack_a, t_stack **stack_b);
 
 // ## utils
 // ### utils_check.c
-int				ft_isnotnbr(int num, char **argv, int i);
 int				ft_isnbr(char *num);
-void			ft_check_args(int argc, char **argv);
+//int				ft_isnotnbr(int num, char **argv, int i);
+void			ft_argcheck(int argc, char **argv);
 
 // ### utils_free+print.c
 void			ft_free(char **str);
 void			free_stack(t_stack **stack);
 void			ft_error(char *msg);
-//void			printList(t_stack *head);
+void			ft_prt_err(char *msg, int fd);
+//void			print_list(t_stack *head);
 
 // ### utils_index.c
 t_stack			*get_next_min(t_stack **stack);
