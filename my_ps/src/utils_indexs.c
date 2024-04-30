@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:08:16 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/26 17:05:16 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:26:34 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,14 @@ t_stack	*get_next_min(t_stack **stack)
 	min = NULL;
 	has_min = 0;
 	head = *stack;
-	if (head)
+	while (head)
 	{
-		while (head)
+		if ((head->index == -1) && (!has_min || head->value < min->value))
 		{
-			if ((head->index == -1) && (!has_min || head->value < min->value))
-			{
-				min = head;
-				has_min = 1;
-			}
-			head = head->next;
+			min = head;
+			has_min = 1;
 		}
+		head = head->next;
 	}
 	return (min);
 }
