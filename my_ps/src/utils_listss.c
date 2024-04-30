@@ -6,24 +6,24 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:04:37 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/29 18:59:12 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:01:48 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // Creates new node and returns the pointer
-t_stack	*ft_listnew(int value)
+t_stack	*ft_lst_newnode(int value)
 {
-	t_stack	*new;
+	t_stack	*new_node;
 
-	new = malloc(sizeof(*new));
-	if (!new)
+	new_node = malloc(sizeof(*new_node));
+	if (!new_node)
 		return (NULL);
-	new->value = value;
-	new->index = -1;
-	new->next = NULL;
-	return (new);
+	new_node->value = value;
+	new_node->index = -1;
+	new_node->next = NULL;
+	return (new_node);
 }
 
 // Adds the specified node to a stack (list) making it the head
@@ -34,34 +34,34 @@ void	ft_listadd_front(t_stack **stack, t_stack *new)
 }
 
 // Returns the pointer of the last node 
-t_stack	*ft_listlast(t_stack *head)
+t_stack	*ft_lst_pointer2last(t_stack *head)
 {
-	t_stack	*tmp;
+	t_stack	*ptr;
 
-	tmp = head;
-	while (tmp->next)
+	ptr = head;
+	while (ptr->next)
 	{
-		tmp = tmp->next;
-		if (tmp->next == NULL)
-			return (tmp);
+		ptr = ptr->next;
+		if (ptr->next == NULL)
+			return (ptr);
 	}
-	return (tmp);
+	return (ptr);
 }
 
 // Adds the specified node to a stack (list) making it the last node
-void	ft_listadd_back(t_stack **stack, t_stack *new)
+void	ft_lst_node2back(t_stack **stack, t_stack *new_node)
 {
-	t_stack	*n;
+	t_stack	*ptr;
 
 	if (*stack)
 	{
-		n = ft_listlast(*stack);
-		n->next = new;
-		new->next = NULL;
+		ptr = ft_lst_pointer2last(*stack);
+		ptr->next = new_node;
+		new_node->next = NULL;
 	}
 	else
 	{
-		*stack = new;
+		*stack = new_node;
 		(*stack)->next = NULL;
 	}
 }

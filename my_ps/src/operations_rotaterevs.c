@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 16:42:43 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/29 19:02:34 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:02:26 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	reverse_rotate(t_stack **stack)
 	if (ft_listsize(*stack) < 2)
 		return (-1);
 	head = *stack;
-	tail = ft_listlast(head);
+	tail = ft_lst_pointer2last(head);
 	while (head)
 	{
 		if (head->next->next == NULL)

@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:44:54 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/29 19:00:01 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:15:13 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,13 @@ void	stack_init(t_stack **stack, int argc, char *argv[])
 	}
 	while (args[i])
 	{
-		new = ft_listnew(ft_atoi(args[i]));
-		ft_listadd_back(stack, new);
+		new = ft_lst_newnode(ft_atoi(args[i]));
+		ft_lst_node2back(stack, new);
 		i++;
 	}
 	index_stack(stack);
-	//if (argc == 2)
-	//	ft_free(args);
+	if (argc == 2) 
+		ft_free(args);
 }
 
 int	is_sorted(t_stack **stack)

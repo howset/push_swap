@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:06:12 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/29 19:12:54 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:15:22 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_isnbr(char *nbr)
 	return (1);
 }
 
-int	ft_isnotnbr(int nbr, char *argv[], int i)
+int	ft_isdupli(int nbr, char *argv[], int i)
 {
 	i++;
 	while (argv[i])
@@ -59,12 +59,12 @@ void	ft_argcheck(int argc, char *argv[])
 		tmp = ft_atoi(args[i]);
 		if (!ft_isnbr(args[i]))
 			ft_prt_err("Error\n", 2);
-		if (ft_isnotnbr(tmp, args, i))
-			ft_prt_err("Error\n", 2); // check for doubles
+		if (ft_isdupli(tmp, args, i))
+			ft_prt_err("Error\n", 2);
 		if (tmp < -2147483648 || tmp > 2147483647)
 			ft_prt_err("Error\n", 2);
 		i++;
 	}
-	//if (argc == 2)
-	//	ft_free(args);
+	if (argc == 2)
+		ft_free(args);
 }
