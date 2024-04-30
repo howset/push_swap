@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:44:54 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/30 16:37:43 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/30 22:04:17 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(int argc, char *argv[])
 	*stack_a = NULL;
 	*stack_b = NULL;
 	stack_init(stack_a, argc, argv);
-	if (is_sorted(stack_a))
+	if (already_sorted(stack_a))
 	{
 		free_stack(stack_a);
 		free_stack(stack_b);
@@ -62,12 +62,13 @@ void	stack_init(t_stack **stack, int argc, char *argv[])
 		ft_lst_node2back(stack, new);
 		i++;
 	}
-	index_stack(stack);
+	stack_indexing(stack);
 	if (argc == 2) 
 		ft_free(args);
 }
 
-int	is_sorted(t_stack **stack)
+// Check if stack is already sorted
+int	already_sorted(t_stack **stack)
 {
 	t_stack	*head;
 
@@ -81,6 +82,7 @@ int	is_sorted(t_stack **stack)
 	return (1);
 }
 
+// Sort the stack
 void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	if (ft_list_size(*stack_a) <= 5)

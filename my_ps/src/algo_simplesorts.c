@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:54:23 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/30 16:35:29 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/30 22:06:28 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	simple_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
 
-	if (is_sorted(stack_a) || ft_list_size(*stack_a) == 0 
+	if (already_sorted(stack_a) || ft_list_size(*stack_a) == 0 
 		|| ft_list_size(*stack_a) == 1)
 		return ;
 	size = ft_list_size(*stack_a);
@@ -60,7 +60,7 @@ void	sort_3(t_stack **stack_a)
 	head = *stack_a;
 	min = get_min(stack_a, -1);
 	next_min = get_min(stack_a, min);
-	if (is_sorted(stack_a))
+	if (already_sorted(stack_a))
 		return ;
 	if (head->index == min && head->next->index != next_min)
 	{
@@ -91,7 +91,7 @@ void	sort_4(t_stack **stack_a, t_stack **stack_b)
 {
 	int	distance;
 
-	if (is_sorted(stack_a))
+	if (already_sorted(stack_a))
 		return ;
 	distance = get_distance(stack_a, get_min(stack_a, -1));
 	if (distance == 1)
@@ -103,7 +103,7 @@ void	sort_4(t_stack **stack_a, t_stack **stack_b)
 	}
 	else if (distance == 3)
 		rra(stack_a);
-	if (is_sorted(stack_a))
+	if (already_sorted(stack_a))
 		return ;
 	pb(stack_a, stack_b);
 	sort_3(stack_a);
@@ -129,7 +129,7 @@ void	sort_5(t_stack **stack_a, t_stack **stack_b)
 	}
 	else if (distance == 4)
 		rra(stack_a);
-	if (is_sorted(stack_a))
+	if (already_sorted(stack_a))
 		return ;
 	pb(stack_a, stack_b);
 	sort_4(stack_a, stack_b);

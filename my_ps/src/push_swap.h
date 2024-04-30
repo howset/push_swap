@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:27:26 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/30 16:36:23 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/30 22:20:06 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_stack
 
 // ## push_swap.c
 void			stack_init(t_stack **stack, int argc, char **argv);
-int				is_sorted(t_stack **stack);
+int				already_sorted(t_stack **stack);
 void			sort_stack(t_stack **stack_a, t_stack **stack_b);
 
 // ## operations
@@ -84,8 +84,8 @@ void			ft_prt_err(char *msg, int fd);
 //void			print_list(t_stack *head);
 
 // ### utils_index.c
-t_stack			*get_next_min(t_stack **stack);
-void			index_stack(t_stack **stack);
+t_stack			*lowest_val(t_stack **stack);
+void			stack_indexing(t_stack **stack);
 
 // ### utils_list.c
 t_stack			*ft_lst_newnode(int value);

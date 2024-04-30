@@ -6,13 +6,13 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:08:16 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/30 17:26:25 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/30 22:19:55 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*get_next_min(t_stack **stack)
+t_stack	*lowest_val(t_stack **stack)
 {
 	t_stack	*head;
 	t_stack	*min;
@@ -33,17 +33,17 @@ t_stack	*get_next_min(t_stack **stack)
 	return (min);
 }
 
-void	index_stack(t_stack **stack)
+void	stack_indexing(t_stack **stack)
 {
 	t_stack	*head;
 	int		index;
 
 	index = 0;
-	head = get_next_min(stack);
+	head = lowest_val(stack);
 	while (head)
 	{
 		head->index = index;
 		index++;
-		head = get_next_min(stack);
+		head = lowest_val(stack);
 	}
 }
