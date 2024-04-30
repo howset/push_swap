@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:44:54 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/30 16:15:13 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:37:43 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	main(int argc, char *argv[])
 	return (0);
 }
 
+// Initializes the stack
 void	stack_init(t_stack **stack, int argc, char *argv[])
 {
 	t_stack	*new;
@@ -82,7 +83,7 @@ int	is_sorted(t_stack **stack)
 
 void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
-	if (ft_listsize(*stack_a) <= 5)
+	if (ft_list_size(*stack_a) <= 5)
 		simple_sort(stack_a, stack_b);
 	else
 		radix_sort(stack_a, stack_b);

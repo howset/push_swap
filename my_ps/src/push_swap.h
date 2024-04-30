@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:27:26 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/30 16:15:00 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:36:23 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ t_stack			*ft_lst_newnode(int value);
 void			ft_listadd_front(t_stack **stack, t_stack *new);
 t_stack			*ft_lst_pointer2last(t_stack *head);
 void			ft_lst_node2back(t_stack **stack, t_stack *new);
-int				ft_listsize(t_stack *head);
+int				ft_list_size(t_stack *head);
 
 // ### utils_others.c
 int				get_distance(t_stack **stack, int index);

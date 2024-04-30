@@ -6,13 +6,13 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:04:37 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/30 16:01:48 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:41:07 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Creates new node and returns the pointer
+// creates a new node & return a pointer
 t_stack	*ft_lst_newnode(int value)
 {
 	t_stack	*new_node;
@@ -33,7 +33,7 @@ void	ft_listadd_front(t_stack **stack, t_stack *new)
 	*stack = new;
 }
 
-// Returns the pointer of the last node 
+// get the pointer of last node 
 t_stack	*ft_lst_pointer2last(t_stack *head)
 {
 	t_stack	*ptr;
@@ -48,7 +48,7 @@ t_stack	*ft_lst_pointer2last(t_stack *head)
 	return (ptr);
 }
 
-// Adds the specified node to a stack (list) making it the last node
+// add new node to the back (last) of the stack/list
 void	ft_lst_node2back(t_stack **stack, t_stack *new_node)
 {
 	t_stack	*ptr;
@@ -66,18 +66,11 @@ void	ft_lst_node2back(t_stack **stack, t_stack *new_node)
 	}
 }
 
-// Returns the size of the linked List
-int	ft_listsize(t_stack *head)
+// get the size of a list
+int	ft_list_size(t_stack *head)
 {
-	size_t	i;
-	t_stack	*tmp;
-
-	tmp = head;
-	i = 0;
-	while (tmp)
-	{
-		tmp = tmp->next;
-		i++;
-	}
-	return (i);
+	if (head == 0)
+		return (0);
+	else
+		return (1 + ft_list_size(head->next));
 }

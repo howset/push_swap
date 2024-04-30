@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 16:40:34 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/29 19:01:33 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:35:37 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	push(t_stack **stack_to, t_stack **stack_from)
 	t_stack	*head_to;
 	t_stack	*head_from;
 
-	if (ft_listsize(*stack_from) == 0)
+	if (ft_list_size(*stack_from) == 0)
 		return (-1);
 	head_to = *stack_to;
 	head_from = *stack_from;

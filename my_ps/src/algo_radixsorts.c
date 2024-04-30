@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:55:01 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/29 19:00:34 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:35:20 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 
 	i = 0;
 	head_a = *stack_a;
-	size = ft_listsize(head_a);
+	size = ft_list_size(head_a);
 	max_bits = get_max_bits(stack_a);
 	while (i < max_bits)
 	{
@@ -37,7 +37,7 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 			else
 				pb(stack_a, stack_b);
 		}
-		while (ft_listsize(*stack_b) != 0)
+		while (ft_list_size(*stack_b) != 0)
 			pa(stack_a, stack_b);
 		i++;
 	}

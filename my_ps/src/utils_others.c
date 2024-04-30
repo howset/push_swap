@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:07:20 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/29 19:02:47 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:36:45 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ void	make_top(t_stack **stack, int distance)
 	if (distance == 0)
 		return ;
 	head = *stack;
-	tmp = ft_listsize(head) - distance;
-	if (distance <= (ft_listsize(head) / 2))
+	tmp = ft_list_size(head) - distance;
+	if (distance <= (ft_list_size(head) / 2))
 	{
 		while (distance-- > 0)
 			ra(stack);

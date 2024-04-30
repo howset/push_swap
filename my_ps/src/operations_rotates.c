@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 16:40:59 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/30 16:03:19 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:36:06 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	rotate(t_stack **stack)
 	t_stack	*head;
 	t_stack	*tail;
 
-	if (ft_listsize(*stack) < 2)
+	if (ft_list_size(*stack) < 2)
 		return (-1);
 	head = *stack;
 	tail = ft_lst_pointer2last(head);
@@ -45,7 +45,7 @@ int	rb(t_stack **stack_b)
 
 int	rr(t_stack **stack_a, t_stack **stack_b)
 {
-	if ((ft_listsize(*stack_a) < 2) || (ft_listsize(*stack_b) < 2))
+	if ((ft_list_size(*stack_a) < 2) || (ft_list_size(*stack_b) < 2))
 		return (-1);
 	rotate(stack_a);
 	rotate(stack_b);
