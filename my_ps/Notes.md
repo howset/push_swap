@@ -13,16 +13,21 @@
 4. ▶️stack_indexing◀️ Then after the stack has been populated by the values, the function `stack_indexing` (in utils_index.c) assigns the proper indexes. This function relies on the function `get_next_min` which finds the node with the smallest value in a stack that has not been indexed. The `get_next_min` function loops to check each node. If the <kbd>index</kbd> of a node is -1 and do not have the <kbd>flag</kbd>, then it is at position 1. The flag is then set to 1 and updates <kbd>min</kbd> to the current node. The next node is then checked if not yet indexed (-1), and checked if the <kbd>value</kbd> is less then the previous node. After the loop, the function returns the min pointer, which points to the node with the minimum value.
 Basically, if the array is {3, 1, 2, 4}, the index would be 2, 0, 1, 3, respectively.
 5. ▶️main◀️ Then after the stack (linked list) is created, the main function makes a preliminary check (`already_sorted`) if the <kbd>values</kbd> are already sorted, if yes return zero and free the `stacks a & b`. If not, then it calls the function `sort_stack`.
-6. ▶️sort_stack◀️ The `sort_stack` function checks the size of <kbd>stack a</kbd> and calls the corresponding sorting algo. If size < 5, then use the hardcoded `simple_sort`, if more, then `radix_sort`.
+6. ▶️sort_stack◀️ The `sort_stack` function checks the size of <kbd>stack a</kbd> and calls the corresponding sorting algo. If size < 5, then use the hardcoded `simple_sort`, if more, then `radix_sort` (both in its respective algo_*.c files).
+
+### Algorithms
+#### Simple sort
+1. ▶️simple_sort◀️ For values amounting up to 5, the algo is hardcoded in this simple_sort algo.
+2. ▶️simple_sort◀️ The first thing done here is a control sequence to check if the input values (or the values in the stack) are already sorted, or tthere is either no value given or just one value. If any of these is true, then nothing is returned. If not, then proceed to get the size of the stack/length of the value array. The consequent steps depends on the size.
+	- If there are only 2 values, then there is only one operation to be done, namely swapping the values using `sa`.
+	- If size is 3, 
+
+#### Radix sort
 
 ### Operations
 #### Push
 #### Swap
 #### Rotate
 #### Reverse rotate
-
-### Algorithms
-#### Simple sort
-#### Radix sort
 
 ### Utilities
