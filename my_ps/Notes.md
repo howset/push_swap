@@ -21,7 +21,12 @@ Basically, if the array is {3, 1, 2, 4}, the index would be 2, 0, 1, 3, respecti
 2. ▶️simple_sort◀️ The first thing done here is a control sequence to check if the input values (or the values in the stack) are already sorted, or there is either no value given or just one value. If any of these is true, then nothing is returned. If not, then proceed to get the size of the stack/length of the value array. The consequent steps depends on the size.
 	- If there are only 2 values, then there is only one operation to be done, namely swapping the values using `sa`.
 	- If size is 3 or more, then go to the corresponding functions.
-3. ▶️sort_3◀️ To sort 3, `stack b` is not used. This function sorts a stack of three elements by performing rotate, swap, and reverse rotate operations based on the relative values of the index of the head and the next node in the stack.
+3. ▶️sort_3◀️ The sort_3 function is in algo_simplesort_sort3.c due to first exceeding the number of lines for a fucntion. Then it is separated to different functions but exceeds the number of function in a file. 
+	- To sort 3, `stack b` is not used. 
+	- This function sorts a stack of three elements by performing rotate, swap, and reverse rotate operations based on the relative values of the index of the head and the next node in the stack.
+	- The way the function does this is by using the `min_idx` function that takes a stack and a value. The first call of `min_idx` uses <kbd>val</kbd> = -1. This guarantees getting the node with the lowest index (0). This is stored in <kbd>minidx</kbd>.
+	- The next call increments the val that gets passed to the `min_idx` function by using <kbd>minidx</kbd>, and the return of the function is stored in <kbd>next_minidx</kbd>.
+	- By knowing  
 4. ▶️sort_4◀️ 
 
 #### Radix sort

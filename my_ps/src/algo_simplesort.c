@@ -6,12 +6,12 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:54:23 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/02 15:08:32 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/02 15:50:29 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // sort_3 was originally here, but moved to another file because limitations
-// some helper function were also moved.
+// another helper function was also moved.
 
 #include "push_swap.h"
 
@@ -19,6 +19,7 @@ int		get_distance(t_stack **stack, int index);
 void	sort_4(t_stack **stack_a, t_stack **stack_b);
 void	sort_5(t_stack **stack_a, t_stack **stack_b);
 
+// calls the corresponding algo if it's < 5 values. sort_3 is in another file.
 void	simple_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
@@ -36,6 +37,7 @@ void	simple_sort(t_stack **stack_a, t_stack **stack_b)
 		sort_5(stack_a, stack_b);
 }
 
+// returns the distance (count) of the node with the given index from the head.
 int	get_distance(t_stack **stack, int index)
 {
 	t_stack	*head;
