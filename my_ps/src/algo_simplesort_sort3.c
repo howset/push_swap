@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 14:29:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/02 16:13:02 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/02 17:41:11 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,7 @@ void	sort_3(t_stack **stack_a)
 
 	minidx = min_idx(stack_a, -1);
 	next_minidx = min_idx(stack_a, minidx);
+	//exec_ops(*stack_a, 0, 1);
 	exec_ops(*stack_a, minidx, next_minidx);
 }
+

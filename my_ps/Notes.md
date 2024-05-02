@@ -26,8 +26,9 @@ Basically, if the array is {3, 1, 2, 4}, the index would be 2, 0, 1, 3, respecti
 	- This function sorts a stack of three elements by performing rotate, swap, and reverse rotate operations based on the relative values of the index of the head and the next node in the stack.
 	- The way the function does this is by using the `min_idx` function that takes a stack and a value. The first call of `min_idx` uses <kbd>val</kbd> = -1. This guarantees getting the node with the lowest index (0). This is stored in <kbd>minidx</kbd>.
 	- The next call increments the val that gets passed to the `min_idx` function by using <kbd>minidx</kbd>, and the return of the function is stored in <kbd>next_minidx</kbd>.
-	- By knowing  
-4. ▶️sort_4◀️ 
+	- If there are 3 sorted value, then <kbd>minidx</kbd> and <kbd>next_minidx</kbd> will always be 0 and 1 respectively. However the `sort_3` function is called by the subsequent sorting function (namely `sort_4`), at which point <kbd>minidx</kbd> and <kbd>next_minidx</kbd> may have different result.
+4. ▶️sort_4◀️ In this function some conditionals are declared according to a measure <kbd>distance</kbd> that describes how far the node with the lowest idx is from the head of a stack and perform (a) hardcoded operation(s) to bring it to the first position. Then push that node to <kbd>stack_b</kbd>, and the rest of the nodes (<kbd>values</kbd>) in the stack are sorted by `sort_3`.
+5. ▶️sort_5◀️ Same with `sort_4`. 
 
 #### Radix sort
 
