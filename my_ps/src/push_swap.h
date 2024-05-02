@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:27:26 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/02 15:05:23 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/02 15:19:56 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	sort_5(t_stack **stack_a, t_stack **stack_b);
 
 // ### algo_simplesort_sort3.c
 int		min_idx(t_stack **stack, int val);
-void	exec_ops(t_stack **stack_a, t_stack *head, int minidx, int next_minidx);
+void	exec_ops(t_stack *head, int minidx, int next_minidx);
 void	sort_3(t_stack **stack_a);
 
 // ### algo_radixsort.c
@@ -97,9 +97,5 @@ void	ft_listadd_front(t_stack **stack, t_stack *new);
 t_stack	*ft_lst_pointer2last(t_stack *head);
 void	ft_lst_node2back(t_stack **stack, t_stack *new);
 int		ft_list_size(t_stack *head);
-
-// ### utils_others.c
-//int		get_distance(t_stack **stack, int index);
-//void	make_top(t_stack **stack, int distance);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 14:29:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/02 15:05:45 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/02 15:20:35 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include "push_swap.h"
 
-// get the minimum index(sort_3)
+// get the node with the minimum index. returns only the index.
 int	min_idx(t_stack **stack, int val)
 {
 	t_stack	*head;
@@ -34,29 +34,29 @@ int	min_idx(t_stack **stack, int val)
 }
 
 // execute the operations in sort_3
-void	exec_ops(t_stack **stack_a, t_stack *head, int minidx, int next_minidx)
+void	exec_ops(t_stack *head, int minidx, int next_minidx)
 {
 	if (head->index == minidx && head->next->index != next_minidx)
 	{
-		ra(stack_a);
-		sa(stack_a);
-		rra(stack_a);
+		ra(&head);
+		sa(&head);
+		rra(&head);
 	}
 	else if (head->index == next_minidx)
 	{
 		if (head->next->index == minidx)
-			sa(stack_a);
+			sa(&head);
 		else
-			rra(stack_a);
+			rra(&head);
 	}
 	else
 	{
 		if (head->next->index == minidx)
-			ra(stack_a);
+			ra(&head);
 		else
 		{
-			sa(stack_a);
-			rra(stack_a);
+			sa(&head);
+			rra(&head);
 		}
 	}
 }
@@ -71,7 +71,7 @@ void	sort_3(t_stack **stack_a)
 	head = *stack_a;
 	minidx = min_idx(stack_a, -1);
 	next_minidx = min_idx(stack_a, minidx);
-	exec_ops(stack_a, head, minidx, next_minidx);
+	exec_ops(head, minidx, next_minidx);
 }
 
 /* void	sort_3(t_stack **stack_a)

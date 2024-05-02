@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:54:23 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/02 15:02:34 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/02 15:08:32 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ void	simple_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
 
-	if (is_sorted(stack_a) || ft_list_size(*stack_a) == 0 
-		|| ft_list_size(*stack_a) == 1)
+	if (ft_list_size(*stack_a) == 0 || ft_list_size(*stack_a) == 1)
 		return ;
 	size = ft_list_size(*stack_a);
 	if (size == 2)
