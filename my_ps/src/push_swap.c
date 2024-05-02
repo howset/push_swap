@@ -1,14 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swaps.c                                       :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:44:54 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/30 22:04:17 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/02 14:54:31 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// the main function is here
 
 #include "push_swap.h"
 
@@ -16,6 +18,9 @@ void	stack_init(t_stack **stack, int argc, char **argv);
 int		is_sorted(t_stack **stack);
 void	sort_stack(t_stack **stack_a, t_stack **stack_b);
 
+// checks for valid inputs then initializes stack a
+// preliminary check if stack is already sorted
+// then call sort stack if not sorted
 int	main(int argc, char *argv[])
 {
 	t_stack	**stack_a;
@@ -29,7 +34,7 @@ int	main(int argc, char *argv[])
 	*stack_a = NULL;
 	*stack_b = NULL;
 	stack_init(stack_a, argc, argv);
-	if (already_sorted(stack_a))
+	if (is_sorted(stack_a))
 	{
 		free_stack(stack_a);
 		free_stack(stack_b);
@@ -41,7 +46,7 @@ int	main(int argc, char *argv[])
 	return (0);
 }
 
-// Initializes the stack
+// initialize the stack
 void	stack_init(t_stack **stack, int argc, char *argv[])
 {
 	t_stack	*new;
@@ -67,8 +72,8 @@ void	stack_init(t_stack **stack, int argc, char *argv[])
 		ft_free(args);
 }
 
-// Check if stack is already sorted
-int	already_sorted(t_stack **stack)
+// checker if stack is already sorted or not
+int	is_sorted(t_stack **stack)
 {
 	t_stack	*head;
 
@@ -82,7 +87,7 @@ int	already_sorted(t_stack **stack)
 	return (1);
 }
 
-// Sort the stack
+// sort the stack, call corresponding algo
 void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	if (ft_list_size(*stack_a) <= 5)

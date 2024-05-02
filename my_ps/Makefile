@@ -12,18 +12,18 @@ AR					= ar rcs
 RM					= rm -f
 
 ## Sources & header
-SRC-PS				= ./src/push_swaps.c \
-						./src/algo_radixsorts.c \
-						./src/algo_simplesorts.c \
-						./src/operations_pushs.c \
-						./src/operations_rotaterevs.c \
-						./src/operations_rotates.c \
-						./src/operations_swaps.c \
-						./src/utils_checkss.c \
-						./src/utils_free+prints.c \
-						./src/utils_indexs.c \
-						./src/utils_listss.c \
-						./src/utils_others.c
+SRC-PS				= ./src/push_swap.c \
+						./src/algo_radixsort.c \
+						./src/algo_simplesort.c \
+						./src/algo_simplesort_sort3.c \
+						./src/operations_push.c \
+						./src/operations_rotaterev.c \
+						./src/operations_rotate.c \
+						./src/operations_swap.c \
+						./src/utils_checks.c \
+						./src/utils_free+print.c \
+						./src/utils_index.c \
+						./src/utils_lists.c
 
 HEADER				= ./src/
 
@@ -57,7 +57,7 @@ $(NAME-LIBFT):
 		@make -C./lib
 		@echo "$(GREEN)Libft ready!$(COLOFF)"
 
-$(NAME-PS): ./src/push_swaps.c $(NAME-LIBFT)
+$(NAME-PS): ./src/push_swap.c $(NAME-LIBFT)
 		@$(CC) $(CFLAGS) $(HEADER) $(SRC-PS) $(NAME-LIBFT) -o $(NAME-PS)
 		@echo "$(GREEN)Push Swap ready!$(COLOFF)"
 

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_others.c                                     :+:      :+:    :+:   */
+/*   utils_other.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:07:20 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/30 16:36:45 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/02 15:01:34 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_distance(t_stack **stack, int index)
+/* int	get_distance(t_stack **stack, int index)
 {
 	t_stack	*head;
 	int		distance;
@@ -27,9 +27,9 @@ int	get_distance(t_stack **stack, int index)
 		head = head->next;
 	}
 	return (distance);
-}
+} */
 
-void	make_top(t_stack **stack, int distance)
+/* void	make_top(t_stack **stack, int distance)
 {
 	t_stack	*head;
 	int		tmp;
@@ -48,4 +48,4 @@ void	make_top(t_stack **stack, int distance)
 		while (tmp-- > 0)
 			rra(stack);
 	}
-}
+} */
