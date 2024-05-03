@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_other.c                                      :+:      :+:    :+:   */
+/*   utils_other-unused.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:07:20 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/02 15:01:34 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:34:44 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 	return (distance);
 } */
 
-/* void	make_top(t_stack **stack, int distance)
+void	make_top(t_stack **stack, int distance)
 {
 	t_stack	*head;
 	int		tmp;
@@ -48,4 +48,4 @@
 		while (tmp-- > 0)
 			rra(stack);
 	}
-} */
+}

@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:27:26 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/02 17:30:27 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/03 19:20:50 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,21 +67,21 @@ void	sort_5(t_stack **stack_a, t_stack **stack_b);
 
 // ### algo_simplesort_sort3.c
 int		min_idx(t_stack **stack, int val);
-void	exec_ops(t_stack *head, int minidx, int next_minidx);
+void	exec_ops(t_stack *head, t_stack **stack_a, int minidx, int next_minidx);
 void	sort_3(t_stack **stack_a);
 
 // ### algo_radixsort.c
-int		get_max_bits(t_stack **stack);
+int		find_max_bits(t_stack **stack);
 void	radix_sort(t_stack **stack_a, t_stack **stack_b);
 
 // ## utils
 // ### utils_check.c
 int		ft_isnbr(char *num);
-int		ft_isdupli(int num, char **argv, int i);
+int		ft_isduplicate(int num, char **argv, int i);
 void	ft_argcheck(int argc, char **argv);
 
 // ### utils_free+print.c
-void	ft_free(char **str);
+void	free_args(char **str);
 void	free_stack(t_stack **stack);
 void	ft_error(char *msg);
 void	ft_prt_err(char *msg, int fd);

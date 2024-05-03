@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_free+prints.c                                :+:      :+:    :+:   */
+/*   utils_free+print.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:22:18 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/29 18:05:50 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:28:22 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free(char **str)
+// free malloc-ed args
+void	free_args(char **str)
 {
 	int	i;
 
@@ -26,6 +27,7 @@ void	ft_free(char **str)
 	}
 }
 
+// free stack
 void	free_stack(t_stack **stack)
 {
 	t_stack	*head;
@@ -41,13 +43,14 @@ void	free_stack(t_stack **stack)
 	free(stack);
 }
 
+// print error on fd 2, then exit
 void	ft_prt_err(char *msg, int fd)
 {
 	ft_putendl_fd(msg, fd);
 	exit(0);
 }
 
-// Prints the Linked List
+// prints linked List
 // unused
 /* void	print_list(t_stack *head)
 {

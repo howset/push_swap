@@ -20,7 +20,7 @@ SRC-PS				= ./src/push_swap.c \
 						./src/operations_rotaterev.c \
 						./src/operations_rotate.c \
 						./src/operations_swap.c \
-						./src/utils_checks.c \
+						./src/utils_check.c \
 						./src/utils_free+print.c \
 						./src/utils_index.c \
 						./src/utils_lists.c

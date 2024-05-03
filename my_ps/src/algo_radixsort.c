@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo_radixsorts.c                                  :+:      :+:    :+:   */
+/*   algo_radixsort.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:55:01 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/04/30 16:35:20 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:44:46 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_max_bits(t_stack **stack);
+int	find_max_bits(t_stack **stack);
 
 void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 {
@@ -25,7 +25,7 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 	i = 0;
 	head_a = *stack_a;
 	size = ft_list_size(head_a);
-	max_bits = get_max_bits(stack_a);
+	max_bits = find_max_bits(stack_a);
 	while (i < max_bits)
 	{
 		j = 0;
@@ -43,7 +43,7 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-int	get_max_bits(t_stack **stack)
+int	find_max_bits(t_stack **stack)
 {
 	t_stack	*head;
 	int		max;

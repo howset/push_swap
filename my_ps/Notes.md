@@ -13,11 +13,11 @@
 4. ▶️stack_indexing◀️ Then after the stack has been populated by the values, the function `stack_indexing` (in utils_index.c) assigns the proper indexes. This function relies on the function `lowest_val` which finds the node with the smallest value in a stack that has not been indexed. The `lowest_val` function loops to check each node. If the <kbd>index</kbd> of a node is -1 and do not have the <kbd>flag</kbd>, then it is at position 1. The flag is then set to 1 and updates <kbd>min</kbd> to the current node. The next node is then checked if not yet indexed (-1), and checked if the <kbd>value</kbd> is less then the previous node. After the loop, the function returns the min pointer, which points to the node with the minimum value.
 Basically, if the array is {3, 1, 2, 4}, the index would be 2, 0, 1, 3, respectively.
 5. ▶️main◀️ Then after the stack (linked list) is created, the main function makes a preliminary check (`already_sorted`) if the <kbd>values</kbd> are already sorted, if yes return zero and free the `stacks a & b`. If not, then it calls the function `sort_stack`.
-6. ▶️sort_stack◀️ The `sort_stack` function checks the size of <kbd>stack a</kbd> (by `ft_list_size`) and calls the corresponding sorting algo. If size < 5, then use the hardcoded `simple_sort`, if more, then `radix_sort` (both in its respective algo_*.c files).
+6. ▶️sort_stack◀️ The `sort_stack` function checks the size of <kbd>stack a</kbd> (by `ft_list_size`) and calls the corresponding sorting algo. If size < 5, then use `simple_sort`, if more, then `radix_sort` (both in its respective algo_*.c files).
 
 ### Algorithms
 #### Simple sort
-1. ▶️simple_sort◀️ For values amounting up to 5, the algo is hardcoded in this simple_sort algo.
+1. ▶️simple_sort◀️ For values amounting up to 5, the algo is in this simple_sort algo.
 2. ▶️simple_sort◀️ The first thing done here is a control sequence to check if the input values (or the values in the stack) are already sorted, or there is either no value given or just one value. If any of these is true, then nothing is returned. If not, then proceed to get the size of the stack/length of the value array. The consequent steps depends on the size.
 	- If there are only 2 values, then there is only one operation to be done, namely swapping the values using `sa`.
 	- If size is 3 or more, then go to the corresponding functions.
@@ -31,7 +31,10 @@ Basically, if the array is {3, 1, 2, 4}, the index would be 2, 0, 1, 3, respecti
 5. ▶️sort_5◀️ Same with `sort_4`. 
 
 #### Radix sort
-
+1. ▶️radix_sort◀️ Radix sort is used to sort > 5 numbers. Works by sorting the <kbd>index</kbd> of each node according to its bit representation. It iterates through each bit position of the maximum number in the stack (<kbd>max_bits</kbd>), performing sorting based on those bits.
+2. ▶️find_max_bits◀️ <kbd>max_bits</kbd> is obtained through the function `find_max_bits` where the <kbd>max</kbd> is the <kbd>index</kbd> of a node. In the loop iterating the stack, <kbd>max</kbd> is updated with bigger <kbd>index</kbd> value. The bit value of <kbd>max</kbd> is then shifted by <kbd>max_bits</kbd> (which was initialized as 0) in a loop for however many times until it is zero. That would be the maximum number of bits.
+3. ▶️radix_sort◀️ The function has a nested while loop. The outer loop increments <kbd>i</kbd> until equal to <kbd>max_bits</kbd>, and the inner loop increments <kbd>j</kbd> until equal to <kbd>size</kbd>. In the inner loop, the function checks the <kbd>i</kbd>-th bit of the <kbd>index</kbd> of the head of stack_a. If this bit is 1, it does the `ra` function. If this bit is 0, it pushes the head of stack_a to stack_b using `pb`.Then another while loop to empty stack_b by `pa`. And so on
+.
 ### Operations
 #### Push
 #### Swap

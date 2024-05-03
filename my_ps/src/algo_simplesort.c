@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:54:23 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/02 17:44:17 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:02:56 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	simple_sort(t_stack **stack_a, t_stack **stack_b)
 		sort_5(stack_a, stack_b);
 }
 
-// returns the distance (count) of the node with the given index from the head.
+// returns the distance (count) of a node with a given index from the top(first)
 int	get_distance(t_stack **stack, int index)
 {
 	t_stack	*head;
@@ -55,6 +55,9 @@ int	get_distance(t_stack **stack, int index)
 	return (distance);
 }
 
+// get node with idx 0, then move it to top, then pb
+// then sort the remaining 3 in stack_a
+// then pa
 void	sort_4(t_stack **stack_a, t_stack **stack_b)
 {
 	int	distance;
@@ -76,6 +79,7 @@ void	sort_4(t_stack **stack_a, t_stack **stack_b)
 	pa(stack_a, stack_b);
 }
 
+// like sort_4
 void	sort_5(t_stack **stack_a, t_stack **stack_b)
 {
 	int	distance;

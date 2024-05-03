@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:44:54 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/02 14:54:31 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:45:53 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ void	stack_init(t_stack **stack, int argc, char *argv[])
 		i++;
 	}
 	stack_indexing(stack);
-	if (argc == 2) 
-		ft_free(args);
+	if (argc == 2)
+		free_args(args);
 }
 
 // checker if stack is already sorted or not

@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 14:29:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/02 17:41:11 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:46:21 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,29 +34,29 @@ int	min_idx(t_stack **stack, int val)
 }
 
 // execute the operations in sort_3
-void	exec_ops(t_stack *stack_a, int minidx, int next_minidx)
+void	exec_ops(t_stack *head, t_stack **stack_a, int minidx, int next_minidx)
 {
-	if (stack_a->index == minidx && stack_a->next->index != next_minidx)
+	if (head->index == minidx && head->next->index != next_minidx)
 	{
-		ra(&stack_a);
-		sa(&stack_a);
-		rra(&stack_a);
+		ra(stack_a);
+		sa(stack_a);
+		rra(stack_a);
 	}
-	else if (stack_a->index == next_minidx)
+	else if (head->index == next_minidx)
 	{
-		if (stack_a->next->index == minidx)
-			sa(&stack_a);
+		if (head->next->index == minidx)
+			sa(stack_a);
 		else
-			rra(&stack_a);
+			rra(stack_a);
 	}
 	else
 	{
-		if (stack_a->next->index == minidx)
-			ra(&stack_a);
+		if (head->next->index == minidx)
+			ra(stack_a);
 		else
 		{
-			sa(&stack_a);
-			rra(&stack_a);
+			sa(stack_a);
+			rra(stack_a);
 		}
 	}
 }
@@ -64,12 +64,12 @@ void	exec_ops(t_stack *stack_a, int minidx, int next_minidx)
 // do the sorting on stack_a
 void	sort_3(t_stack **stack_a)
 {
+	t_stack	*head;
 	int		minidx;
 	int		next_minidx;
 
+	head = *stack_a;
 	minidx = min_idx(stack_a, -1);
 	next_minidx = min_idx(stack_a, minidx);
-	//exec_ops(*stack_a, 0, 1);
-	exec_ops(*stack_a, minidx, next_minidx);
+	exec_ops(head, stack_a, minidx, next_minidx);
 }
-
