@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:27:26 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/03 19:20:50 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/04 15:15:54 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,6 @@ void	stack_indexing(t_stack **stack);
 
 // ### utils_list.c
 t_stack	*ft_lst_newnode(int value);
-void	ft_listadd_front(t_stack **stack, t_stack *new);
 t_stack	*ft_lst_pointer2last(t_stack *head);
 void	ft_lst_node2back(t_stack **stack, t_stack *new);
 int		ft_list_size(t_stack *head);

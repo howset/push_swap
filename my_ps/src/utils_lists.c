@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:04:37 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/03 16:42:09 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/04 15:16:08 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,6 @@ t_stack	*ft_lst_newnode(int value)
 	new_node->index = -1;
 	new_node->next = NULL;
 	return (new_node);
-}
-
-// Adds the specified node to a stack (list) making it the head
-void	ft_listadd_front(t_stack **stack, t_stack *new)
-{
-	new->next = *stack;
-	*stack = new;
 }
 
 // get the pointer of last node 
