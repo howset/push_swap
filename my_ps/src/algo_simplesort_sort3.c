@@ -6,15 +6,30 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 14:29:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/03 21:46:21 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/04 15:59:34 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
+
+int	min_idx(t_stack **stack, int val);
+void	exec_ops(t_stack *head, t_stack **stack_a, int minidx, int next_minidx);
 
 // sort_3 is just too long, more than 25 lines, so it is split to 3 functions. 
 // but then it exceeds the number of functions in a file.
 // so it is now put here along with another helper function. 
+// do the sorting on stack_a
+void	sort_3(t_stack **stack_a)
+{
+	t_stack	*head;
+	int		minidx;
+	int		next_minidx;
 
-#include "push_swap.h"
+	head = *stack_a;
+	minidx = min_idx(stack_a, -1);
+	next_minidx = min_idx(stack_a, minidx);
+	exec_ops(head, stack_a, minidx, next_minidx);
+}
 
 // get the node with the minimum index. returns only the index.
 int	min_idx(t_stack **stack, int val)
@@ -59,17 +74,4 @@ void	exec_ops(t_stack *head, t_stack **stack_a, int minidx, int next_minidx)
 			rra(stack_a);
 		}
 	}
-}
-
-// do the sorting on stack_a
-void	sort_3(t_stack **stack_a)
-{
-	t_stack	*head;
-	int		minidx;
-	int		next_minidx;
-
-	head = *stack_a;
-	minidx = min_idx(stack_a, -1);
-	next_minidx = min_idx(stack_a, minidx);
-	exec_ops(head, stack_a, minidx, next_minidx);
 }

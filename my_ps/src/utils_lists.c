@@ -6,13 +6,13 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:04:37 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/04 15:16:08 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/04 15:17:03 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// creates a new node & return a pointer
+// creates a new node & return the pointer
 t_stack	*ft_lst_newnode(int value)
 {
 	t_stack	*new_node;
