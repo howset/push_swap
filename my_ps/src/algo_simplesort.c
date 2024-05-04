@@ -6,16 +6,15 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:54:23 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/03 17:02:56 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/04 18:11:15 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // sort_3 was originally here, but moved to another file because limitations
-// another helper function was also moved.
 
 #include "push_swap.h"
 
-int		get_distance(t_stack **stack, int index);
+int		find_dist(t_stack **stack, int index);
 void	sort_4(t_stack **stack_a, t_stack **stack_b);
 void	sort_5(t_stack **stack_a, t_stack **stack_b);
 
@@ -38,21 +37,21 @@ void	simple_sort(t_stack **stack_a, t_stack **stack_b)
 }
 
 // returns the distance (count) of a node with a given index from the top(first)
-int	get_distance(t_stack **stack, int index)
+int	find_dist(t_stack **stack, int index)
 {
 	t_stack	*head;
-	int		distance;
+	int		dist;
 
-	distance = 0;
+	dist = 0;
 	head = *stack;
 	while (head)
 	{
 		if (head->index == index)
 			break ;
-		distance++;
+		dist++;
 		head = head->next;
 	}
-	return (distance);
+	return (dist);
 }
 
 // get node with idx 0, then move it to top, then pb
@@ -60,17 +59,17 @@ int	get_distance(t_stack **stack, int index)
 // then pa
 void	sort_4(t_stack **stack_a, t_stack **stack_b)
 {
-	int	distance;
+	int	dist;
 
-	distance = get_distance(stack_a, min_idx(stack_a, -1));
-	if (distance == 1)
+	dist = find_dist(stack_a, min_idx(stack_a, -1));
+	if (dist == 1)
 		ra(stack_a);
-	else if (distance == 2)
+	else if (dist == 2)
 	{
 		ra(stack_a);
 		ra(stack_a);
 	}
-	else if (distance == 3)
+	else if (dist == 3)
 		rra(stack_a);
 	if (is_sorted(stack_a))
 		return ;
@@ -82,22 +81,22 @@ void	sort_4(t_stack **stack_a, t_stack **stack_b)
 // like sort_4
 void	sort_5(t_stack **stack_a, t_stack **stack_b)
 {
-	int	distance;
+	int	dist;
 
-	distance = get_distance(stack_a, min_idx(stack_a, -1));
-	if (distance == 1)
+	dist = find_dist(stack_a, min_idx(stack_a, -1));
+	if (dist == 1)
 		ra(stack_a);
-	else if (distance == 2)
+	else if (dist == 2)
 	{
 		ra(stack_a);
 		ra(stack_a);
 	}
-	else if (distance == 3)
+	else if (dist == 3)
 	{
 		rra(stack_a);
 		rra(stack_a);
 	}
-	else if (distance == 4)
+	else if (dist == 4)
 		rra(stack_a);
 	if (is_sorted(stack_a))
 		return ;

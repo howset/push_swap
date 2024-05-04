@@ -123,52 +123,126 @@ Basically, if the array is {3, 1, 2, 4}, the index would be 2, 0, 1, 3, respecti
 5. ▶️sort_5◀️ Same with `sort_4`. 
 
 #### Radix sort
-1. ▶️radix_sort◀️ Radix sort is used to sort > 5 numbers. Works by sorting the <kbd>index</kbd> of each node according to its bit representation. This is done because radix sorting on the value itself may run to problems if the value is negative. It iterates through each bit position of the maximum number in the stack (<kbd>max_bits</kbd>), performing sorting based on those bits.
-2. ▶️find_max_bits◀️ <kbd>max_bits</kbd> is obtained through the function `find_max_bits` where the <kbd>max</kbd> is the <kbd>index</kbd> of a node. In the loop iterating the stack, <kbd>max</kbd> is updated with bigger <kbd>index</kbd> value. The bit value of <kbd>max</kbd> is then shifted by <kbd>max_bits</kbd> (which was initialized as 0) in a loop for however many times until it is zero. That would be the maximum number of bits.
-3. ▶️radix_sort◀️ The function has a nested while loop. The outer loop increments <kbd>i</kbd> until equal to <kbd>max_bits</kbd>, and the inner loop increments <kbd>j</kbd> until equal to <kbd>size</kbd>. In the inner loop, the function checks the <kbd>i</kbd>-th bit of the <kbd>index</kbd> of the head of stack_a. If this bit is 1, it does the `ra` function. If this bit is 0, it pushes the head of stack_a to stack_b using `pb`.Then another while loop to empty stack_b by `pa`. And so on
+1. ▶️radix_sort◀️ Radix sort is used to sort > 5 numbers. Works by sorting the <kbd>index</kbd> of each node according to its bit representation. This is done because radix sorting on the value itself may run to problems if the value is negative. It iterates through each bit position of the maximum number in the stack (<kbd>max_bits</kbd>), performing sorting based on those bits. 
+2. This algo is very inefficient. In fact it operates only on </kbd>stack a</kbd>, and operations like `sb`, `rb`, etc were not utilized at all. Had to do it this way because I am desperate. 
+3. ▶️find_max_bits◀️ <kbd>max_bits</kbd> is obtained through the function `find_max_bits` where the <kbd>max</kbd> is the <kbd>index</kbd> of a node. In the loop iterating the stack, <kbd>max</kbd> is updated with bigger <kbd>index</kbd> value.
+	```c
+	while (head)
+	{
+		if (head->index > max)
+			max = head->index;
+		head = head->next;
+	}
+	```
+4. The bit value of <kbd>max</kbd> is then shifted by <kbd>max_bits</kbd> (which was initialized as 0) in a loop for however many times until it is zero. That would be the maximum number of bits.
+	```c
+	while ((max >> max_bits) != 0)
+		max_bits++;
+	```
+5. ▶️radix_sort◀️ The function has a nested while loop. The outer loop increments <kbd>i</kbd> until equal to <kbd>max_bits</kbd>, and the inner loop increments <kbd>j</kbd> until equal to <kbd>size</kbd>. In the inner loop, the function checks the <kbd>i</kbd>-th bit of the <kbd>index</kbd> of the head of stack_a. If this bit is 1, it does the `ra` function. If this bit is 0, it pushes the head of stack_a to stack_b using `pb`.Then another while loop to empty stack_b by `pa`. And so on
+	```c
+	while (i < max_bits)
+	{
+		j = 0;
+		while (j++ < size)
+		{
+			head_a = *stack_a;
+			if (((head_a->index >> i) & 1) == 1)
+				ra(stack_a);
+			else
+				pb(stack_a, stack_b);
+		}
+		while (ft_list_size(*stack_b) != 0)
+			pa(stack_a, stack_b);
+		i++;
+	}
+	```
 .
 ### Operations
 #### Push
-1. The push function initializes temporary pointers <kbd>head_to</kbd> and <kbd>head_from</kbd> to the respective heads of <kbd>stack_to</kbd> and <kbd>stack_from</kbd>, and assigns <kbd>tmp</kbd> as <kbd>head_from</kbd> and the next element of <kbd>stack_from</kbd> to <kbd>head_from</kbd>. It updates <kbd>stack_from</kbd> to point to <kbd>head_from</kbd>, removing the first element from <kbd>stack_from</kbd>.
-
-```c
-head_to = *stack_to;
-head_from = *stack_from;
-tmp = head_from;
-head_from = head_from->next;
-*stack_from = head_from;
-```
+1. ▶️push◀️The push function initializes temporary pointers <kbd>head_to</kbd> and <kbd>head_from</kbd> to the respective heads of <kbd>stack_to</kbd> and <kbd>stack_from</kbd>, and assigns <kbd>tmp</kbd> as <kbd>head_from</kbd> and the next element of <kbd>stack_from</kbd> to <kbd>head_from</kbd>. It updates <kbd>stack_from</kbd> to point to <kbd>head_from</kbd>, removing the first element from <kbd>stack_from</kbd>.
+	```c
+	head_to = *stack_to;
+	head_from = *stack_from;
+	tmp = head_from;
+	head_from = head_from->next;
+	*stack_from = head_from;
+	```
 2. If <kbd>stack_to</kbd> is initially empty (<kbd>head_to</kbd> is NULL), <kbd>tmp</kbd> becomes the new head of <kbd>stack_to</kbd>, and its next pointer is set to NULL (end of stack). If <kbd>stack_to</kbd> is not empty, <kbd>tmp</kbd> is inserted at the beginning of the stack by setting its next pointer to the previous head of <kbd>stack_to</kbd>, and <kbd>tmp</kbd> becomes the new head of <kbd>stack_to</kbd>. Then the pointer <kbd>stack_to</kbd> is updated to point to the new head of <kbd>stack_to</kbd>.
-
-```c
-if (!head_to)
-{
-	head_to = tmp;
-	head_to->next = NULL;
-	*stack_to = head_to;
-}
-else
-{
-	tmp->next = head_to;
-	*stack_to = tmp;
-}
-```
+	```c
+	if (!head_to)
+	{
+		head_to = tmp;
+		head_to->next = NULL;
+		*stack_to = head_to;
+	}
+	else
+	{
+		tmp->next = head_to;
+		*stack_to = tmp;
+	}
+	```
 3. `pa` and `pb` are just calling the push function with the reverse of the stacks.
 
 #### Swap
 Similar structure with push.
 
 #### Rotate
-Similar structure with push and swap, but `rr` does both operations at the same time 
+Similar structure with push and swap, but `rr` does both operations at the same time.
 
 #### Reverse rotate
 Similar with rotate.
 
 ### Utilities
 #### Arg checker
+1. Checks if the arguments are given in a string (e.g. ./a.out "1 2 3"). If yes, then split with `ft_split`.
+	```c
+	if (argc == 2)
+		args = ft_split(argv[1], ' ');
+	```
+2. If not then assign all <kbd>argv</kbd> to the array <kbd>args</kbd>.
+3. Then check all <kbd>args</kbd> one-by-one whether:
+	- it is a valid number
+		```c
+		if (!ft_isnbr(args[i]))
+		```
+	- it has no duplicate
+		```c
+		if (ft_isduplicate(tmp, args, i))
+		```
+	- beyond int
+		```c
+		if (tmp < -2147483648 || tmp > 2147483647)
+		```
+4. Error message is printed by `ft_prt_err` to fd 2 and exits.
+5. If `ft_split` is called, then explicit `free` is required, contained in `free_args`.
+	```c
+	if (argc == 2)
+		free_args(args);
+	```
+
 #### Freeing and printing
+1. Contains functions to free:
+	- array of arguments (`free_args`)
+	- stack (`free_stack`)
+2. And printing error message to STDERR and exit the program.
+
 #### Indexing
+1. ▶️stack_indexing◀️This function assigns an index to a node, incrementing it each by 1, starting from 0 for the lowest value node in the stack.
+	```c
+	idx = 0;
+	head = min_val(stack);
+	while (head)
+	{
+		head->index = idx;
+		idx++;
+		head = min_val(stack);
+	}
+	```
+2. ▶️find_minval◀️ This function finds the lowest value node that **has not** been indexed yet (<kbd>idx</kbd> = -1) and returns the pointer of that node.
+
 #### Linked list
+
 
 ### Checker?
 

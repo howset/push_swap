@@ -6,18 +6,18 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 14:29:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/04 15:59:34 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/04 18:12:41 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	min_idx(t_stack **stack, int val);
+int		min_idx(t_stack **stack, int val);
 void	exec_ops(t_stack *head, t_stack **stack_a, int minidx, int next_minidx);
 
 // sort_3 is just too long, more than 25 lines, so it is split to 3 functions. 
 // but then it exceeds the number of functions in a file.
-// so it is now put here along with another helper function. 
+// so it is now put here. 
 // do the sorting on stack_a
 void	sort_3(t_stack **stack_a)
 {
