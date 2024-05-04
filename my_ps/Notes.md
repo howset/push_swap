@@ -9,8 +9,7 @@
 | push_swap.c 		| algo_simplesort.c 		| operations_push.c 		| utils_check.c 		|   |
 | push_swap.h 		| algo_simplesort_sort3.c	| operations_rotate.c 		| utils_free+print.c	|   |
 |  				 	| algo_radixsort.c 			| operations_rotaterev.c	| utils_index.c 		|   |
-|  				 	| 				 			| operations_rotaterev.c	| utils_list.c 			|   |
-|  				 	|  							| operations_swap.c 		|  						|   |
+|  				 	| 				 			| operations_swap.c			| utils_list.c 			|   |
 
 ## General
 ### Main and Stack Initialization
