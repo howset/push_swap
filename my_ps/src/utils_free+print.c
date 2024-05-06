@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:22:18 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/03 17:28:22 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/06 15:53:43 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_prt_err(char *msg, int fd)
 	exit(0);
 }
 
-// prints linked List
+// print linked List
 // unused
 /* void	print_list(t_stack *head)
 {
@@ -60,7 +60,7 @@ void	ft_prt_err(char *msg, int fd)
 	while (tmp != NULL)
 	{
 		ft_putnbr_fd(tmp->value, 1);
-		ft_putendl_fd("", 1);
+		ft_putendl_fd(" ", 1);
 		tmp = tmp->next;
 	}
 } */

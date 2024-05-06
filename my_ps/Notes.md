@@ -225,7 +225,7 @@ Similar with rotate.
 1. Contains functions to free:
 	- array of arguments (`free_args`)
 	- stack (`free_stack`)
-2. And printing error message to STDERR and exit the program.
+2. And printing error message (`ft_prt_err`) via `ft_putendl_fd` to STDERR and exit the program.
 
 #### Indexing
 1. ▶️stack_indexing◀️ This function assigns an index to a node, incrementing it each by 1, starting from 0 for the lowest value node in the stack.
@@ -264,7 +264,7 @@ Similar with rotate.
 	ptr = ft_lst_pointer2last(*stack);
 	ptr->next = new_node;
 	```
-4. ▶️ft_list_size◀️ Copied from my exam exercise. Just increment a counter while looping over the stack (<kbd>head->next</kbd>). The counter starts **not** from 0, but 1.
+4. ▶️ft_list_size◀️ Copied from my exam exercise with additional lines to control against 0 size. Just increment a counter while looping over the stack (<kbd>head->next</kbd>). The counter starts **not** from 0, but 1. 
 
 ### Checker?
 
