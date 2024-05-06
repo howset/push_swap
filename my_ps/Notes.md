@@ -228,7 +228,7 @@ Similar with rotate.
 2. And printing error message to STDERR and exit the program.
 
 #### Indexing
-1. ▶️stack_indexing◀️This function assigns an index to a node, incrementing it each by 1, starting from 0 for the lowest value node in the stack.
+1. ▶️stack_indexing◀️ This function assigns an index to a node, incrementing it each by 1, starting from 0 for the lowest value node in the stack.
 	```c
 	idx = 0;
 	head = min_val(stack);
@@ -242,7 +242,24 @@ Similar with rotate.
 2. ▶️find_minval◀️ This function finds the lowest value node that **has not** been indexed yet (<kbd>idx</kbd> = -1) and returns the pointer of that node.
 
 #### Linked list
-
+1. ▶️ft_lst_newnode◀️ Creates a node with a certain <kbd>value</kbd> by first malloc-ing a node the size of a t_stack node (so has to be freed). Then assigning the <kbd>new_node->value</kbd> by the <kbd>value</kbd> input argument, initialize <kbd>new_node->index</kbd> as -1, and provide the pointer to the next node <kbd>new_node->next</kbd> as NULL. Returns the (pointer to the) node.
+	```c
+	new_node->value = value;
+	new_node->index = -1;
+	new_node->next = NULL;
+	return (new_node);
+	```
+2. ▶️ft_lst_pointer2last◀️ Gets a pointer to the last node in a stack. Iterates every node until the value of <kbd>ptr->next</kbd> is NULL (this means the end of the linked list/stack), and returns it.
+	```c
+	while (ptr->next)
+	{
+		ptr = ptr->next;
+		if (ptr->next == NULL)
+			return (ptr);
+	}
+	return (ptr);
+	```
+3. ▶️ft_lst_node2back◀️ Adds a node to the end of a stack. It is done by first getting the pointer of the last node (by `ft_lst_pointer2last`), then modify the pointer on that node to the about to be added node. 
 
 ### Checker?
 

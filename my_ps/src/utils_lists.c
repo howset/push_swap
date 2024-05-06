@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:04:37 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/04 15:17:03 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:44:54 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,10 @@ void	ft_lst_node2back(t_stack **stack, t_stack *new_node)
 	{
 		ptr = ft_lst_pointer2last(*stack);
 		ptr->next = new_node;
-		new_node->next = NULL;
 	}
 	else
 	{
 		*stack = new_node;
-		(*stack)->next = NULL;
 	}
 }
 
