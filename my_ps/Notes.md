@@ -259,7 +259,12 @@ Similar with rotate.
 	}
 	return (ptr);
 	```
-3. ▶️ft_lst_node2back◀️ Adds a node to the end of a stack. It is done by first getting the pointer of the last node (by `ft_lst_pointer2last`), then modify the pointer on that node to the about to be added node. 
+3. ▶️ft_lst_node2back◀️ Adds a node to the end of a stack. It is done by first getting the pointer of the last node (by `ft_lst_pointer2last`), then modify the pointer on that node to the about-to-be-added node.
+	```c
+	ptr = ft_lst_pointer2last(*stack);
+	ptr->next = new_node;
+	```
+4. ▶️ft_list_size◀️ Copied from my exam exercise. Just increment a counter while looping over the stack (<kbd>head->next</kbd>). The counter starts **not** from 0, but 1.
 
 ### Checker?
 
