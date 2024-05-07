@@ -96,33 +96,3 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 		radix_sort(stack_a, stack_b);
 }
 
-//#include<stdio.h>
-/*
-int	main(int argc, char *argv[])
-{
-	t_stack		*a;
-	t_stack		*b;
-
-	a = NULL;
-	b = NULL;
-	
-	//control for invalid inputs (no args, or no numbers)
-	//make valid inputs to ints
-	if (argc < 2)
-		return(ft_printf("Invalid input.\n"));
-	else if (argc == 2)
-	{
-		argv = ft_split(argv[1], ' ');
-		//check argv for errors
-	}
-	
-	//initialize stack(s)
-	
-	
-	//int	i=0;
-	//while (i<4)
-	//{
-	//	printf("Args[%d]:%s\n", i, argv[i]);
-	//	i++;
-	//} 
-}*/

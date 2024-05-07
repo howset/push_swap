@@ -4,12 +4,18 @@
 1. All files in ./src
 2. Organized in this manner
 
-| Main and header	| Algorithm			 		| Operations 				| Utilities 			| Checker? |
-|-------------------|---------------------------|---------------------------|-----------------------|----------|
-| push_swap.c 		| algo_simplesort.c 		| operations_push.c 		| utils_check.c 		|   |
-| push_swap.h 		| algo_simplesort_sort3.c	| operations_rotate.c 		| utils_free+print.c	|   |
-|  				 	| algo_radixsort.c 			| operations_rotaterev.c	| utils_index.c 		|   |
-|  				 	| 				 			| operations_swap.c			| utils_list.c 			|   |
+| Main and header	| Algorithm			 		| Operations 				| Utilities 			|
+|-------------------|---------------------------|---------------------------|-----------------------|
+| push_swap.c 		| algo_simplesort.c 		| operations_push.c 		| utils_check.c 		|
+| push_swap.h 		| algo_simplesort_sort3.c	| operations_rotate.c 		| utils_free+print.c	|
+|  				 	| algo_radixsort.c 			| operations_rotaterev.c	| utils_index.c 		|
+|  				 	| 				 			| operations_swap.c			| utils_list.c 			|
+
+## Slides
+![pushswap1](./slides/pushswap1.svg "radix: initial and end")
+![pushswap2](./slides/pushswap2.svg "radix: 1st run")
+![pushswap3](./slides/pushswap3.svg "radix: 2nd run")
+![pushswap4](./slides/pushswap4.svg "radix: 3rd run")
 
 ## Functions Explanations
 ### Main and Stack Initialization
@@ -270,8 +276,9 @@ Similar with rotate.
 - Nope, not going to do this.
 
 ## Remarks
+- The radix algorithm to sort numbers seems very inefficient. One of the reason for this is because basically sorting is done on whatever numbers is left on one stack, and the other stack is just being used as bucket/stash to store. This is evident in the operations that are used in the whole algo are basically just rotations in stack a, and pushing back and forth between stack b and a.
 - There are ideas that I found that could potentially optimise the working of the radix sorting algorithm, however it does not seem enough to significantly improve the performance (i.e. negligible improvement), hence not done.
-- This algo would not achieve necessary score requirement to do the bonus, so I skip it.
+- This algo would not achieve necessary score requirement to do the bonus checker, so I skip it.
 - A (much) better approach I have found is by foregoing the linked list entirely and save a lot of headache, and simply store the values in an int array variable within a struct (designated as stack a), and declare another int variable that describes the size of the array. 
 	- The sorting itself is done via bubble sorting.
 	- First get the median of stack a (obtained via quick sorting a dummy stack a) and push everything lower than that to b. Repeat until 3 largest number left in a, and sort them.
