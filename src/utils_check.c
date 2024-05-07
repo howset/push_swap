@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:06:12 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/07 17:15:48 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:06:47 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_isduplicate(int nbr, char *argv[], int i);
 void	ft_argcheck(int argc, char *argv[])
 {
 	int		i;
-	long	tmp;
+	int	tmp;
 	char	**args;	
 
 	i = 0;

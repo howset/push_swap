@@ -284,9 +284,12 @@ Similar with rotate.
 	- First get the median of stack a (obtained via quick sorting a dummy stack a) and push everything lower than that to b. Repeat until 3 largest number left in a, and sort them.
 	- Then associate a cost for the operations of each number in b to be put in a.
 
-## Checker
+## Visual Checker
+- `https://github.com/o-reo/push_swap_visualizer`
 
 ## To do
 - checker
 - leaks?
 - make statics 👍
+- read the eval sheet
+	- not returning error from maxint input, maybe has something to do with ft_atoi
