@@ -289,7 +289,7 @@ Similar with rotate.
 
 ## To do
 - checker
-- leaks?
+- leaks? check from gnl
 - make statics 👍
 - read the eval sheet
 	- not returning error from maxint input, maybe has something to do with ft_atoi
