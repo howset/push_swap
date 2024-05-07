@@ -6,14 +6,14 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:06:12 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/03 17:31:42 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:15:48 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_isnbr(char *nbr);
-int	ft_isduplicate(int nbr, char *argv[], int i);
+static int	ft_isnbr(char *nbr);
+static int	ft_isduplicate(int nbr, char *argv[], int i);
 
 // check if arguments are valid
 void	ft_argcheck(int argc, char *argv[])
@@ -46,7 +46,7 @@ void	ft_argcheck(int argc, char *argv[])
 }
 
 // check if string is number
-int	ft_isnbr(char *nbr)
+static int	ft_isnbr(char *nbr)
 {
 	int	i;
 
@@ -63,7 +63,7 @@ int	ft_isnbr(char *nbr)
 }
 
 // check if there is duplicate
-int	ft_isduplicate(int nbr, char *argv[], int i)
+static int	ft_isduplicate(int nbr, char *argv[], int i)
 {
 	i++;
 	while (argv[i])

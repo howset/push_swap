@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:44:54 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/03 21:45:53 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:20:30 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,3 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 	else
 		radix_sort(stack_a, stack_b);
 }
-

@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:04:37 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/06 15:02:02 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:24:22 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,16 +60,17 @@ void	ft_lst_node2back(t_stack **stack, t_stack *new_node)
 }
 
 // get the size of a list
-int ft_list_size(t_stack *begin_list)
+int	ft_list_size(t_stack *begin_list)
 {
-    int i = 1;
-    
+	int	i;
+
+	i = 1;
 	if (begin_list == 0)
 		return (0);
-    while (begin_list->next)
-    {
-        begin_list = begin_list->next;
-        i++;
-    }
-    return (i);
+	while (begin_list->next)
+	{
+		begin_list = begin_list->next;
+		i++;
+	}
+	return (i);
 }

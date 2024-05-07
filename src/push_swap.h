@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:27:26 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/06 12:11:56 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:21:03 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,48 +36,49 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b);
 
 // ## operations
 // ### operations_swap.c
-int		swap(t_stack **stack);
+//int		swap(t_stack **stack); // static
 int		sa(t_stack **stack_a);
 int		sb(t_stack **stack_b);
 int		ss(t_stack **stack_a, t_stack **stack_b);
 
 // ### operations_rotate.c
-int		rotate(t_stack **stack);
+//int		rotate(t_stack **stack); // static
 int		ra(t_stack **stack_a);
 int		rb(t_stack **stack_b);
 int		rr(t_stack **stack_a, t_stack **stack_b);
 
 // ### operations_rotaterev.c
-int		reverse_rotate(t_stack **stack);
+//int		reverse_rotate(t_stack **stack); // static
 int		rra(t_stack **stack_a);
 int		rrb(t_stack **stack_b);
 int		rrr(t_stack **stack_a, t_stack **stack_b);
 
 // ### operations_push.c
-int		push(t_stack **stack_to, t_stack **stack_from);
+//int		push(t_stack **stack_to, t_stack **stack_from); // static
 int		pa(t_stack **stack_a, t_stack **stack_b);
 int		pb(t_stack **stack_a, t_stack **stack_b);
 
 // ## algo
 // ### algo_simplesort.c
 void	simple_sort(t_stack **stack_a, t_stack **stack_b);
-int		find_dist(t_stack **stack, int index);
-void	sort_4(t_stack **stack_a, t_stack **stack_b);
-void	sort_5(t_stack **stack_a, t_stack **stack_b);
+//int		find_dist(t_stack **stack, int index); // static
+//void	sort_4(t_stack **stack_a, t_stack **stack_b); // static
+//void	sort_5(t_stack **stack_a, t_stack **stack_b); // static
 
 // ### algo_simplesort_sort3.c
 int		min_idx(t_stack **stack, int val);
-void	exec_ops(t_stack *head, t_stack **stack_a, int minidx, int next_minidx);
+//void	exec_ops(t_stack *head, t_stack **stack_a, int minidx, 
+//											int next_minidx); // static
 void	sort_3(t_stack **stack_a);
 
 // ### algo_radixsort.c
-int		find_max_bits(t_stack **stack);
+//int		find_max_bits(t_stack **stack); // static
 void	radix_sort(t_stack **stack_a, t_stack **stack_b);
 
 // ## utils
 // ### utils_check.c
-int		ft_isnbr(char *num);
-int		ft_isduplicate(int num, char **argv, int i);
+//int		ft_isnbr(char *num); // static
+//int		ft_isduplicate(int num, char **argv, int i); // static
 void	ft_argcheck(int argc, char **argv);
 
 // ### utils_free+print.c
@@ -88,7 +89,7 @@ void	ft_prt_err(char *msg, int fd);
 //void			print_list(t_stack *head);
 
 // ### utils_index.c
-t_stack	*find_minval(t_stack **stack);
+//t_stack	*find_minval(t_stack **stack); // static
 void	stack_indexing(t_stack **stack);
 
 // ### utils_list.c

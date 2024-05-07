@@ -272,7 +272,7 @@ Similar with rotate.
 	```
 4. ▶️ft_list_size◀️ Copied from my exam exercise with additional lines to control against 0 size. Just increment a counter while looping over the stack (<kbd>head->next</kbd>). The counter starts **not** from 0, but 1. 
 
-### Checker?
+### Checker - bonus ?
 - Nope, not going to do this.
 
 ## Remarks
@@ -284,4 +284,9 @@ Similar with rotate.
 	- First get the median of stack a (obtained via quick sorting a dummy stack a) and push everything lower than that to b. Repeat until 3 largest number left in a, and sort them.
 	- Then associate a cost for the operations of each number in b to be put in a.
 
+## Checker
 
+## To do
+- checker
+- leaks?
+- make statics 👍

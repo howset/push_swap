@@ -6,13 +6,13 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 16:40:59 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/03 16:41:40 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:14:01 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	rotate(t_stack **stack)
+static int	rotate(t_stack **stack)
 {
 	t_stack	*head;
 	t_stack	*tail;

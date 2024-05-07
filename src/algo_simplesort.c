@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:54:23 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/04 18:11:15 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:13:06 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 #include "push_swap.h"
 
-int		find_dist(t_stack **stack, int index);
-void	sort_4(t_stack **stack_a, t_stack **stack_b);
-void	sort_5(t_stack **stack_a, t_stack **stack_b);
+static int		find_dist(t_stack **stack, int index);
+static void		sort_4(t_stack **stack_a, t_stack **stack_b);
+static void		sort_5(t_stack **stack_a, t_stack **stack_b);
 
 // calls the corresponding algo if it's < 5 values. sort_3 is in another file.
 void	simple_sort(t_stack **stack_a, t_stack **stack_b)
@@ -37,7 +37,7 @@ void	simple_sort(t_stack **stack_a, t_stack **stack_b)
 }
 
 // returns the distance (count) of a node with a given index from the top(first)
-int	find_dist(t_stack **stack, int index)
+static int	find_dist(t_stack **stack, int index)
 {
 	t_stack	*head;
 	int		dist;
@@ -57,7 +57,7 @@ int	find_dist(t_stack **stack, int index)
 // get node with idx 0, then move it to top, then pb
 // then sort the remaining 3 in stack_a
 // then pa
-void	sort_4(t_stack **stack_a, t_stack **stack_b)
+static void	sort_4(t_stack **stack_a, t_stack **stack_b)
 {
 	int	dist;
 
@@ -79,7 +79,7 @@ void	sort_4(t_stack **stack_a, t_stack **stack_b)
 }
 
 // like sort_4
-void	sort_5(t_stack **stack_a, t_stack **stack_b)
+static void	sort_5(t_stack **stack_a, t_stack **stack_b)
 {
 	int	dist;
 

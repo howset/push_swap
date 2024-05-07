@@ -6,14 +6,15 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 14:29:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/04 18:12:41 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:23:05 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		min_idx(t_stack **stack, int val);
-void	exec_ops(t_stack *head, t_stack **stack_a, int minidx, int next_minidx);
+int			min_idx(t_stack **stack, int val);
+static void	exec_ops(t_stack *head, t_stack **stack_a, int minidx, 
+				int next_minidx);
 
 // sort_3 is just too long, more than 25 lines, so it is split to 3 functions. 
 // but then it exceeds the number of functions in a file.
@@ -49,7 +50,8 @@ int	min_idx(t_stack **stack, int val)
 }
 
 // execute the operations in sort_3
-void	exec_ops(t_stack *head, t_stack **stack_a, int minidx, int next_minidx)
+static void	exec_ops(t_stack *head, t_stack **stack_a, int minidx, 
+				int next_minidx)
 {
 	if (head->index == minidx && head->next->index != next_minidx)
 	{

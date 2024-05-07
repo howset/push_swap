@@ -6,13 +6,13 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:08:16 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/04 21:20:32 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:16:41 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*find_minval(t_stack **stack);
+static t_stack	*find_minval(t_stack **stack);
 
 // assign indexes to each node in the stack
 void	stack_indexing(t_stack **stack)
@@ -31,7 +31,7 @@ void	stack_indexing(t_stack **stack)
 }
 
 // for stack_indexing. returns the node with the min value. 
-t_stack	*find_minval(t_stack **stack)
+static t_stack	*find_minval(t_stack **stack)
 {
 	t_stack	*head;
 	t_stack	*minval_node;

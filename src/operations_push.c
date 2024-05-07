@@ -6,13 +6,13 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 16:40:34 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/02 16:05:21 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:13:56 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	push(t_stack **stack_to, t_stack **stack_from)
+static int	push(t_stack **stack_to, t_stack **stack_from)
 {
 	t_stack	*tmp;
 	t_stack	*head_to;
