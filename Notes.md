@@ -1,4 +1,4 @@
-# Push Swap
+#Notes
 
 ## Organization
 1. All files in ./src
