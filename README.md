@@ -17,7 +17,7 @@
 ![pushswap3](./slides/pushswap3.svg "radix: 2nd run")
 ![pushswap4](./slides/pushswap4.svg "radix: 3rd run")
 
-## Functions Explanations
+## Functions and Flow
 ### Main and Stack Initialization
 1. ▶️main & ft_argcheck◀️ The `main` function in push_swap.c first checks for valid arguments by calling `ft_argcheck` in utils_checks.c. This function is responsible for splitting the input to args if necessary by using `ft_split` (from libft). Then it checks if the args are all valid numbers (`ft_isnbr`), if not, then error are printed by the function `ft_prt_err` in utils_free+print.c. Duplicates are checked with `ft_isdupli`. If `ft_split` is utilized, then due to memory allocation, <kbd>args</kbd> has to be freed.
 2. ▶️main◀️ Then the <kbd>stacks a & b</kbd> are allocated by malloc. The stacks' structure are declared in the header file, which is a singly linked list that contains an <kbd>index</kbd> (to determine the most efficient sequence of operations to sort the stack - e.g., if an element is far from its correct position in the sorted stack (i.e., its index is far from its value), it might be more efficient to use a series of rotates or reverse rotates to move it to its correct position, rather than using a series of pushes and swaps.), a <kbd>value</kbd>, and a <kbd>pointer</kbd> to the next node. <kbd>stack a</kbd> is initialized by the function `stack_init` in push_swap.c.
