@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:22:18 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/08 14:48:26 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/08 18:51:32 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,15 @@ void	free_stack(t_stack **stack)
 void	ft_prt_err(char *msg, int fd)
 {
 	ft_putendl_fd(msg, fd);
-	exit(0);
+	exit(1);
 }
+
+/* void	ft_prt_err(char **args, char *msg, int fd)
+{
+	free_args(args);
+	ft_putendl_fd(msg, fd);
+	exit(1);
+} */
 
 // print linked List
 // unused

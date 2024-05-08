@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:27:26 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/08 14:29:30 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/08 17:55:07 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ void	free_args(char **str);
 void	free_stack(t_stack **stack);
 void	ft_error(char *msg);
 void	ft_prt_err(char *msg, int fd);
+//void	ft_prt_err(char **args, char *msg, int fd);
 //void			print_list(t_stack *head);
 
 // ### utils_index.c

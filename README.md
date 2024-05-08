@@ -284,14 +284,13 @@ Similar with rotate.
 	- First get the median of stack a (obtained via quick sorting a dummy stack a) and push everything lower than that to b. Repeat until 3 largest number left in a, and sort them.
 	- Then associate a cost for the operations of each number in b to be put in a.
 
-## Visual Checker
+## Verifications
 - `https://github.com/o-reo/push_swap_visualizer`
+- `valgrind --leak-check=full --show-leak-kinds=all ./push_swap 4 6 3u` (bytes still reachable on invalid inputs)
+- `curl https://raw.githubusercontent.com/hu8813/tester_push_swap/main/pstester.py | python3 -`
 
 ## To do
-- prepare visual checker 👍
 - leaks?
-	- `valgrind --leak-check=full ./push_swap "5 3 1 2 4 6"`
-	- 
 	```
 	valgrind --leak-check=full \
          --show-leak-kinds=all \
@@ -300,6 +299,64 @@ Similar with rotate.
          --log-file=valgrind-out.txt \
          ./executable exampleParam1
 	```
-- make statics 👍
-- read the eval sheet
-	- not returning error from maxint input, maybe has something to do with ft_atoi
+
+## Eval copy paste, with valgrind for convinience
+### Error Management
+- Non-numeric parameters
+	```bash
+	valgrind --leak-check=full --show-leak-kinds=all ./push_swap a bb ccc
+	```
+- Duplicate numeric parameters
+	```bash
+	valgrind --leak-check=full --show-leak-kinds=all ./push_swap 3 3 1
+	```
+- Only numeric, one greater than maxint (2147483647)
+	```bash
+	valgrind --leak-check=full --show-leak-kinds=all ./push_swap 5 2147483647 1
+	```
+- No parameters
+	```bash
+	valgrind --leak-check=full --show-leak-kinds=all ./push_swap 5 2147483647 1
+	```
+### Identity Test
+- 1 parameter
+	```bash
+	valgrind --leak-check=full --show-leak-kinds=all ./push_swap 42
+	```
+- sorted list
+	```bash
+	valgrind --leak-check=full --show-leak-kinds=all ./push_swap 0 1 2 3
+	```
+- sorted list, longer
+	```bash
+	valgrind --leak-check=full --show-leak-kinds=all ./push_swap 0 1 2 3 4 5 6 7 8 9
+	```
+### Simple Version
+- list size must be 2 or 3
+	```bash
+	ARG="2 1 0"; ./push_swap $ARG | ./checker_linux $ARG
+	```
+### Another Simple Version
+- list size must not exceed 12
+	```bash
+	ARG="1 5 2 4 3"; ./push_swap $ARG | ./checker_linux $ARG
+	```
+- random values, must not exceed 12
+	```bash
+	ARG="13 2 64 85 200"; ./push_swap $ARG | ./checker_linux $ARG
+	```
+### Middle Version
+- No points if fail. Move to the next one! Move to the next one! Move to the next one!
+	```bash
+	ARG="<100 randos>"; ./push_swap $ARG | ./checker_linux $ARG
+	```
+	`https://numbergenerator.org/`
+- Radix on 100 nums - 1084
+
+### Advanced Version
+- No points if fail. Move to the next one! Move to the next one! Move to the next one!
+	```bash
+	ARG="<500 randos>"; ./push_swap $ARG | ./checker_linux $ARG
+	```
+	`https://numbergenerator.org/`
+- - Radix on 500 nums - 6784
