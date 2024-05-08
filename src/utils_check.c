@@ -6,11 +6,12 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:06:12 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/08 14:29:38 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/08 16:22:32 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h> //del this
 
 static int	ft_isnbr(char *nbr);
 static int	ft_isduplicate(int nbr, char *argv[], int i);
@@ -19,7 +20,7 @@ static int	ft_isduplicate(int nbr, char *argv[], int i);
 void	ft_argcheck(int argc, char *argv[])
 {
 	int		i;
-	int	tmp;
+	int		tmp;
 	char	**args;	
 
 	i = 0;
@@ -32,13 +33,13 @@ void	ft_argcheck(int argc, char *argv[])
 	}
 	while (args[i])
 	{
+		if (ft_atol(args[i]) < INT_MIN || ft_atol(args[i]) > INT_MAX)
+			ft_prt_err("Error", 2);
 		tmp = ft_atoi(args[i]);
 		if (!ft_isnbr(args[i]))
-			ft_prt_err("Error\n", 2);
+			ft_prt_err("Error", 2);
 		if (ft_isduplicate(tmp, args, i))
-			ft_prt_err("Error\n", 2);
-		if (tmp < -2147483648 || tmp > 2147483647)
-			ft_prt_err("Error\n", 2);
+			ft_prt_err("Error", 2);
 		i++;
 	}
 	if (argc == 2)

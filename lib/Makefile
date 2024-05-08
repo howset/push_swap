@@ -62,6 +62,7 @@ SRC					= $(DIR_FPF)ft_printf.c \
 					$(DIR_LFT)ft_putstr_fd.c \
 					$(DIR_LFT)ft_putendl_fd.c \
 					$(DIR_LFT)ft_putnbr_fd.c \
+					$(DIR_LFT)ft_atol.c \
 
 OBJ					= $(SRC:.c=.o)
 

@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsetyamu <hsetyamu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 16:11:32 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/01/15 13:56:03 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/08 16:15:53 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdlib.h> /*malloc free size_t atoi*/
-# include <unistd.h> /*write NULL*/
-# include <stdint.h> /*SIZE_MAX in ft_calloc*/
+#include <stdlib.h> /*malloc free size_t atoi*/
+#include <unistd.h> /*write NULL*/
+#include <stdint.h> /*SIZE_MAX in ft_calloc*/
+#include <limits.h> /*LONG_MAX in ft_atol*/
 
 int			ft_isalpha(int i);
 int			ft_isdigit(int i);
@@ -51,4 +52,5 @@ void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
+long		ft_atol(const char *nptr);
 #endif
