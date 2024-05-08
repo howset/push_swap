@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:22:18 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/06 15:53:43 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/08 14:46:29 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void	free_args(char **str)
 
 	i = 0;
 	while (str[i])
-		i++;
-	while (i >= 0)
 	{
 		free(str[i]);
-		i--;
+		str[i] = NULL;
+		i++;
 	}
+	free(str);
 }
 
 // free stack

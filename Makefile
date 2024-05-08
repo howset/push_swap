@@ -7,7 +7,7 @@ NAME-LIBFT			= ./lib/libft.a
 
 ## Compiler, flags, & other commands
 CC 					= cc
-CFLAGS 				= -Wall -Werror -Wextra -I
+CFLAGS 				= -g -Wall -Werror -Wextra -I
 AR					= ar rcs
 RM					= rm -f
 

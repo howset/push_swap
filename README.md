@@ -288,8 +288,18 @@ Similar with rotate.
 - `https://github.com/o-reo/push_swap_visualizer`
 
 ## To do
-- checker
-- leaks? check from gnl
+- prepare visual checker 👍
+- leaks?
+	- `valgrind --leak-check=full ./push_swap "5 3 1 2 4 6"`
+	- 
+	```
+	valgrind --leak-check=full \
+         --show-leak-kinds=all \
+         --track-origins=yes \
+         --verbose \
+         --log-file=valgrind-out.txt \
+         ./executable exampleParam1
+	```
 - make statics 👍
 - read the eval sheet
 	- not returning error from maxint input, maybe has something to do with ft_atoi
