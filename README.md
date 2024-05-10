@@ -13,8 +13,8 @@ Patching the leaks was troublesome though. As it is in every case of leaks. The 
 |-------------------|---------------------------|---------------------------|-----------------------|
 | push_swap.c 		| algo_simplesort.c 		| operations_push.c 		| utils_check.c 		|
 | push_swap.h 		| algo_simplesort_sort3.c	| operations_rotate.c 		| utils_free+print.c	|
-|  				 	| algo_radixsort.c 			| operations_rotaterev.c	| utils_index.c 		|
-|  				 	| 				 			| operations_swap.c			| utils_list.c 			|
+| 				 	| algo_radixsort.c 			| operations_rotaterev.c	| utils_index.c 		|
+| 				 	| 							| operations_swap.c			| utils_list.c 			|
 
 ## Slides
 ![pushswap1](./slides/pushswap1.svg "radix: initial and end")
