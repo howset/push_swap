@@ -61,5 +61,5 @@ ARG="<500 randos>"; ./push_swap $ARG | ./checker_linux $ARG
 
 ## Verifications
 - Visualizer [https://github.com/o-reo/push_swap_visualizer](https://github.com/o-reo/push_swap_visualizer)
-- Visualizer [https://gitlab.com/nda-cunh/visualizer-push-swap](https://gitlab.com/nda-cunh/visualizer-push-swap) (not tried in cluster)
+- Visualizer [https://gitlab.com/nda-cunh/visualizer-push-swap](https://gitlab.com/nda-cunh/visualizer-push-swap) (~~not tried in cluster~~ does not work in cluster, dependency issue)
 - Tester [https://github.com/gemartin99/Push-Swap-Tester](https://github.com/gemartin99/Push-Swap-Tester)
