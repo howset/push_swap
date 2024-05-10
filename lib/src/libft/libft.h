@@ -13,10 +13,10 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <stdlib.h> /*malloc free size_t atoi*/
-#include <unistd.h> /*write NULL*/
-#include <stdint.h> /*SIZE_MAX in ft_calloc*/
-#include <limits.h> /*LONG_MAX in ft_atol*/
+# include <stdlib.h> /*malloc free size_t atoi*/
+# include <unistd.h> /*write NULL*/
+# include <stdint.h> /*SIZE_MAX in ft_calloc*/
+# include <limits.h> /*LONG_MAX in ft_atol*/
 
 int			ft_isalpha(int i);
 int			ft_isdigit(int i);
