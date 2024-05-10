@@ -1,5 +1,10 @@
 # Push Swap
 
+## Thoughts
+One of the most difficult project. Struggled with this one for around 2 months, maybe more. Couldn't understand a single thing the first time around, and I pushed back and procrastinate until the blackhole was looming around the corner. Found quite a number of interesting repos though, different approaches in implementing the cration of the stack. I ended up trying to use the easiest one, a singly linked list, because that is easier to follow. And the algorithm is simply radix, because no calculation is involved (don't have to care about the most efficient cost of movement or whatever). Unfortunately, radix is very inefficient, only uses pa, pb, and ra. But good enough to pass I guess. No bonus, because radix sort is not going to give a perfect score anyway.
+
+Patching the leaks was troublesome though. As it is in every case of leaks. The reachable bytes due to using ft_split on arg_check when invalid args are given still can't be fixed. I have no idea how to. But the fact that valgrind does not categorize this as an error consoles me a bit. One of the evaluators said to go take a look and check the performance of ft_split on francinette --strict. Maybe I'll go back to it one day in the future.
+
 ## Organization
 1. All files in ./src
 2. Organized in this manner
@@ -279,7 +284,7 @@ Similar with rotate.
 - The radix algorithm to sort numbers seems very inefficient. One of the reason for this is because basically sorting is done on whatever numbers is left on one stack, and the other stack is just being used as bucket/stash to store. This is evident in the operations that are used in the whole algo are basically just rotations in stack a, and pushing back and forth between stack b and a.
 - There are ideas that I found that could potentially optimise the working of the radix sorting algorithm, however it does not seem enough to significantly improve the performance (i.e. negligible improvement), hence not done.
 - This algo would not achieve necessary score requirement to do the bonus checker, so I skip it.
-- A (much) better approach I have found is by foregoing the linked list entirely and save a lot of headache, and simply store the values in an int array variable within a struct (designated as stack a), and declare another int variable that describes the size of the array. 
+- A (much) better approach I have found is by foregoing the linked list entirely and save a lot of headache, and simply store the values in an int array variable within a struct (designated as stack a), and declare another int variable that describes the size of the array (look for akalimol). 
 	- The sorting itself is done via bubble sorting.
 	- First get the median of stack a (obtained via quick sorting a dummy stack a) and push everything lower than that to b. Repeat until 3 largest number left in a, and sort them.
 	- Then associate a cost for the operations of each number in b to be put in a.
