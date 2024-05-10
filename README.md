@@ -284,7 +284,7 @@ Similar with rotate.
 - The radix algorithm to sort numbers seems very inefficient. One of the reason for this is because basically sorting is done on whatever numbers is left on one stack, and the other stack is just being used as bucket/stash to store. This is evident in the operations that are used in the whole algo are basically just rotations in stack a, and pushing back and forth between stack b and a.
 - There are ideas that I found that could potentially optimise the working of the radix sorting algorithm, however it does not seem enough to significantly improve the performance (i.e. negligible improvement), hence not done.
 - This algo would not achieve necessary score requirement to do the bonus checker, so I skip it.
-- A (much) better approach I have found is by foregoing the linked list entirely and save a lot of headache, and simply store the values in an int array variable within a struct (designated as stack a), and declare another int variable that describes the size of the array (look for akalimol). 
+- A (much) better approach I have found is by foregoing the linked list entirely and save a lot of headache, and simply store the values in an int array variable within a struct (designated as stack a), and declare another int variable that describes the size of the array (look for akalimol/akadil). 
 	- The sorting itself is done via bubble sorting.
 	- First get the median of stack a (obtained via quick sorting a dummy stack a) and push everything lower than that to b. Repeat until 3 largest number left in a, and sort them.
 	- Then associate a cost for the operations of each number in b to be put in a.
