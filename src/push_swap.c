@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:44:54 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/08 17:36:14 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/10 14:21:29 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,11 @@ int	main(int argc, char *argv[])
 		return (-1);
 	ft_argcheck(argc, argv);
 	stack_a = malloc(sizeof(t_stack));
+	if (!stack_a)
+		exit (1);
 	stack_b = malloc(sizeof(t_stack));
+	if (!stack_b)
+		exit (1);
 	*stack_a = NULL;
 	*stack_b = NULL;
 	stack_init(stack_a, argc, argv);

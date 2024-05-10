@@ -283,10 +283,11 @@ Similar with rotate.
 	- The sorting itself is done via bubble sorting.
 	- First get the median of stack a (obtained via quick sorting a dummy stack a) and push everything lower than that to b. Repeat until 3 largest number left in a, and sort them.
 	- Then associate a cost for the operations of each number in b to be put in a.
+- I am not sure at this point what to return in the malloc protection in main, because returning NULL in a function that expects an int return does not work. Maybe return (0)? Or just exit (0)? Or exit (1)? What is the difference here?
 
 ## Verifications
 - `https://github.com/o-reo/push_swap_visualizer`
-- `valgrind --leak-check=full --show-leak-kinds=all ./push_swap 4 6 3u` (bytes still reachable on invalid inputs)
+- `valgrind --leak-check=full --show-leak-kinds=all ./push_swap 4 6 3u` (reachable bytes?)
 - `curl https://raw.githubusercontent.com/hu8813/tester_push_swap/main/pstester.py | python3 -`
 
 ## To do
