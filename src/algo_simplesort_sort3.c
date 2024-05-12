@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   algo_simplesort_sort3.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: hsetya <hsetya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 14:29:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/07 17:23:05 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2024/05/12 15:59:09 by hsetya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 int			min_idx(t_stack **stack, int val);
-static void	exec_ops(t_stack *head, t_stack **stack_a, int minidx, 
+static void	exec_ops(t_stack *head, t_stack **stack_a, int minidx,
 				int next_minidx);
 
 // sort_3 is just too long, more than 25 lines, so it is split to 3 functions. 
@@ -50,7 +50,7 @@ int	min_idx(t_stack **stack, int val)
 }
 
 // execute the operations in sort_3
-static void	exec_ops(t_stack *head, t_stack **stack_a, int minidx, 
+static void	exec_ops(t_stack *head, t_stack **stack_a, int minidx,
 				int next_minidx)
 {
 	if (head->index == minidx && head->next->index != next_minidx)
