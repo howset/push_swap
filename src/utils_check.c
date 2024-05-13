@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsetya <hsetya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:06:12 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/12 15:58:26 by hsetya           ###   ########.fr       */
+/*   Updated: 2024/05/13 12:14:27 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,21 +34,12 @@ void	ft_argcheck(int argc, char *argv[])
 	while (args[i])
 	{
 		if (!ft_isnbr(args[i]))
-		{
-			free_args(args);
-			ft_prt_err("Error", 2);
-		}
+			ft_prt_err(args, "Error", 2);
 		tmp = ft_atoi(args[i]);
 		if (ft_isduplicate(tmp, args, i))
-		{
-			free_args(args);
-			ft_prt_err("Error", 2);
-		}
+			ft_prt_err(args, "Error", 2);
 		if (ft_atol(args[i]) < INT_MIN || ft_atol(args[i]) > INT_MAX)
-		{
-			free_args(args);
-			ft_prt_err("Error", 2);
-		}
+			ft_prt_err(args, "Error", 2);
 		i++;
 	}
 	if (argc == 2)

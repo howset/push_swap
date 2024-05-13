@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsetya <hsetya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:27:26 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/12 15:56:40 by hsetya           ###   ########.fr       */
+/*   Updated: 2024/05/13 12:15:28 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,10 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b);
 void	ft_argcheck(int argc, char **argv);
 
 // ### utils_free+print.c
-void	free_args(char **str);
+void	free_args(char **args);
 void	free_stack(t_stack **stack);
 void	ft_error(char *msg);
-void	ft_prt_err(char *msg, int fd);
+void	ft_prt_err(char **args, char *msg, int fd);
 //void	ft_prt_err(char **args, char *msg, int fd);
 //void			print_list(t_stack *head);
 

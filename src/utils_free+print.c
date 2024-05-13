@@ -3,28 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   utils_free+print.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsetya <hsetya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:22:18 by hsetyamu          #+#    #+#             */
-/*   Updated: 2024/05/12 15:56:52 by hsetya           ###   ########.fr       */
+/*   Updated: 2024/05/13 12:15:43 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // free malloc-ed args
-void	free_args(char **str)
+void	free_args(char **args)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (args[i])
 	{
-		free(str[i]);
-		str[i] = NULL;
+		free(args[i]);
+		args[i] = NULL;
 		i++;
 	}
-	free(str);
+	free(args);
 }
 
 // free stack
@@ -44,8 +44,9 @@ void	free_stack(t_stack **stack)
 }
 
 // print error on fd 2, then exit
-void	ft_prt_err(char *msg, int fd)
+void	ft_prt_err(char **args, char *msg, int fd)
 {
+	free_args(args);
 	ft_putendl_fd(msg, fd);
 	exit(1);
 }
