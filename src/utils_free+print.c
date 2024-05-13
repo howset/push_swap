@@ -51,13 +51,6 @@ void	ft_prt_err(char **args, char *msg, int fd)
 	exit(1);
 }
 
-/* void	ft_prt_err(char **args, char *msg, int fd)
-{
-	free_args(args);
-	ft_putendl_fd(msg, fd);
-	exit(1);
-} */
-
 // print linked List
 // unused
 /* void	print_list(t_stack *head)
