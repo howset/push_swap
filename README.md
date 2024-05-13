@@ -292,7 +292,7 @@ Similar with rotate.
 
 ## Verifications
 - `https://github.com/o-reo/push_swap_visualizer`
-- `valgrind --leak-check=full --show-leak-kinds=all ./push_swap 4 6 3u` (reachable bytes?)
+- `valgrind --leak-check=full --show-leak-kinds=all ./push_swap "4 6 3u"` ~~(reachable bytes?)~~
 - `curl https://raw.githubusercontent.com/hu8813/tester_push_swap/main/pstester.py | python3 -`
 
 ## To do
