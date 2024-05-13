@@ -43,7 +43,7 @@ void	free_stack(t_stack **stack)
 	free(stack);
 }
 
-// print error on fd 2, then exit
+// free args, print error on fd 2, then exit
 void	ft_prt_err(char **args, char *msg, int fd)
 {
 	free_args(args);
